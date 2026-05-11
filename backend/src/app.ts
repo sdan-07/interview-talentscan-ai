@@ -8,6 +8,10 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
+app.get('/', (_,res)=> {
+    res.send('Server running');
+})
+
 app.use('/api/auth', authRouter);
 
 app.use(errorMiddleware);
