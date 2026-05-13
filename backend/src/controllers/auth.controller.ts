@@ -85,8 +85,7 @@ export const getUserDetails = async (req: Request, res:Response): Promise<void> 
     status: "success", 
     user: {
       email: userData?.email,
-      username: userData?.username,
-      password: userData?.password
+      username: userData?.username
     }
   })
 }
