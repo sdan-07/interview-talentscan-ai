@@ -1,5 +1,6 @@
 import express from 'express'
 import authRouter from "./routes/auth.route.js"
+import interviewRouter from './routes/interview.route.js';
 import errorMiddleware from './middlewares/error.middleware.js';
 import cookieParser from "cookie-parser";
 import cors from "cors";
@@ -20,6 +21,7 @@ app.get('/', (_,res)=> {
 })
 
 app.use('/api/auth', authRouter);
+app.use('/api/interview', interviewRouter);
 
 app.use(errorMiddleware);
 

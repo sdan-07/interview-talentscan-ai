@@ -9,7 +9,8 @@ interface jwtPayload {
 
 export const verifyToken = async (req: Request, _: Response, next: NextFunction): Promise<void> => {
   const token = req.cookies.userToken;
-  if (!token) throw new UnauthorizedException("No Token");
+  if (!token) 
+    throw new UnauthorizedException("User not logged in");
 
   let decoded;
   try {
