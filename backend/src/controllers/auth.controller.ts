@@ -32,11 +32,17 @@ export const register = async (req: Request, res: Response): Promise<void> => {
   
   //store to cookies
   res.cookie("userToken", token, {
-    secure: true,
+    secure: process.env.NODE_ENV === "production",
     httpOnly: true,
   });
 
-  res.status(201).json({ status: "success", user });
+  res.status(201).json({ 
+    status: "success", 
+    user: {
+      email: user.email,
+      username: user.username
+    } 
+  });
 };
 
 export const login = async (req: Request, res: Response): Promise<void> => {
@@ -63,11 +69,17 @@ export const login = async (req: Request, res: Response): Promise<void> => {
 
   //store to cookies
   res.cookie("userToken", token, {
-    secure: true,
+    secure: process.env.NODE_ENV === "production",
     httpOnly: true,
   })
 
-  res.status(200).json({status: "success"});
+  res.status(200).json({
+    status: "success",
+    user: {
+      email: user.email,
+      username: user.username,
+    },
+  });
 }
 
 export const logout = async (req: Request, res:Response): Promise<void> => {
