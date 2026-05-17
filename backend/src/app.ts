@@ -21,7 +21,7 @@ app.get('/', (_,res)=> {
 })
 
 app.use('/api/auth', authRouter);
-app.use('/api/interview', interviewRouter);
+app.use('/api/ai', interviewRouter);
 
 app.use(errorMiddleware);
 
