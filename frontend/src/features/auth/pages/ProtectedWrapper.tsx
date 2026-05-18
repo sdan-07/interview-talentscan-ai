@@ -5,15 +5,12 @@ const ProtectedWrapper = () => {
     const { user, loading } = useAuth();
 
     if (loading) {
-        return (
-            <div className="flex min-h-screen items-center justify-center">
-                <h1>Please wait. Loading....</h1>
-            </div>
-        );
+        console.log("loading...");   
+        return null;
     }
 
     if (!user) {
-        return <Navigate to="/" />;
+        return <Navigate to="/" replace />;
     }
 
     return <Outlet />;

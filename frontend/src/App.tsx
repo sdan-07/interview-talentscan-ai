@@ -1,8 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import Login from "./features/auth/pages/Login";
 import Register from "./features/auth/pages/Register";
-import Home from "./Home/Home";
+
 import ProtectedWrapper from "./features/auth/pages/ProtectedWrapper";
+import InterviewHome from "./features/ai/pages/InterviewHome";
+import ShowReport from "./features/ai/pages/ShowReport";
 
 const App = () => {
   return (
@@ -14,7 +16,9 @@ const App = () => {
 
           {/* All protected routes here */}
           <Route element={<ProtectedWrapper />}>
-            <Route path="/home" element={<Home />} />
+            <Route path="/home" element={<InterviewHome />} />
+            <Route path="/result" element={<ShowReport />} />
+
           </Route>
         </Routes>
       
