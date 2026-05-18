@@ -26,7 +26,7 @@ export const verifyToken = async (req: Request, _: Response, next: NextFunction)
 export const blacklistToken = async (req: Request, _: Response, next: NextFunction): Promise<void> => {
   const token = req.cookies.userToken;
   if (!token) 
-    throw new UnauthorizedException("No Token");
+    throw new UnauthorizedException("User not logged in");
 
   const blacklistedToken = await blacklistModel.findOne({ token });
   if (blacklistedToken)
