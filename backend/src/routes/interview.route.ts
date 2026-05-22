@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { verifyToken, blacklistToken } from "../middlewares/auth.middleware.js";
-import { fetchReport, fetchReportById, generateReport } from "../controllers/interview.controller.js";
+import { deleteReportById, fetchReport, fetchReportById, generateReport } from "../controllers/interview.controller.js";
 import { upload } from "../middlewares/file.middleware.js";
 
 const router = Router();
@@ -25,6 +25,13 @@ router.get(
     blacklistToken,
     verifyToken,
     fetchReportById
+)
+
+router.delete(
+    '/removeid/:id',
+    blacklistToken,
+    verifyToken,
+    deleteReportById
 )
 
 export default router;

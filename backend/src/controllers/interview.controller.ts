@@ -27,7 +27,7 @@ export const generateReport = async (
   });
 
   // load to DB
-  await reportModel.create({
+  const report = await reportModel.create({
     user: req.user.id,
     jobDesc,
     selfDesc,
@@ -40,6 +40,7 @@ export const generateReport = async (
     .json({
       status: "success",
       message: "interview report generated successfully",
+      report,
     });
 };
 
@@ -63,4 +64,13 @@ export const fetchReportById = async (req: Request, res: Response): Promise<void
   
   res.status(200).json({ status: "success", report });
 
+}
+
+export const deleteReportById = async (req: Request, res: Response): Promise<void> =>{
+  const reportId = req.params.id;
+  const user = req.user.id; 
+  
+  await reportModel.deleteOne({ _id: reportId, user });
+
+  res.status(200).json({ status: "success", message: "report deleted" });
 }

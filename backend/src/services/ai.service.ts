@@ -24,6 +24,8 @@ const interviewReportSchema = z.object({
       "An overall match percentage from 0 to 100 indicating how well the candidate's profile matches the job description",
     ),
 
+  title: z.string().describe("The title of the job for which the interview report is generated"),
+
   missingSkills: z.array(
     z.string()
     .describe("Mention only 3-4 name of tools as skills which are missing in candidate's profile"),
@@ -41,7 +43,7 @@ const interviewReportSchema = z.object({
         answer: z
           .string()
           .describe(
-            "How to answer this question, what points to cover, what approach to be followed etc.",
+            "provide the answer tfor the question you have provided",
           ),
       }),
     )
@@ -61,7 +63,7 @@ const interviewReportSchema = z.object({
         answer: z
           .string()
           .describe(
-            "How to answer this question, what points to cover, what approach to be followed etc.",
+            "provide the answer tfor the question you have provided",
           ),
       }),
     )
