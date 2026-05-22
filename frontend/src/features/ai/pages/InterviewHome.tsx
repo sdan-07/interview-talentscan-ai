@@ -1,15 +1,15 @@
 import { useState, type FormEvent } from "react";
-import { useNavigate } from "react-router-dom";
 import { useReport } from "../../../hooks/useReport";
+import { useNavigate } from "react-router-dom";
 
 export default function InterviewHome() {
-  const navigate = useNavigate();
   const [dragActive, setDragActive] = useState(false);
   const [resume, setResume] = useState<File | null>(null);
   const [jobDescription, setJobDescription] = useState("");
   const [selfDescription, setSelfDescription] = useState("");
 
-  const { loading, handleGenerateReport } = useReport();
+  const { loading, handleGenerateReport, handleDeleteReportById, report } =
+    useReport();
 
   const handleResume = (file: File) => {
     setResume(file);
@@ -23,12 +23,18 @@ export default function InterviewHome() {
       handleResume(e.dataTransfer.files[0]);
     }
   };
+  const navigation = useNavigate();
 
   const handleGenerate = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    await handleGenerateReport({ resume, jobDescription, selfDescription });
-    console.log("report generated successfully");
-    navigate("/result");
+    if (!resume) return;
+
+    const generate = await handleGenerateReport({
+      resume,
+      jobDescription,
+      selfDescription,
+    });
+    if (generate?._id) navigation(`/result/${generate._id}`);
   };
 
   return (
@@ -157,9 +163,7 @@ export default function InterviewHome() {
                   className="w-full md:w-auto px-10 py-4 rounded-2xl bg-pink-600 hover:bg-pink-500 text-white font-semibold shadow-lg transition active:scale-95"
                 >
                   {loading && (
-                    <span
-                      className="inline-block mt-1 mr-1.5 w-4 h-4 border-2 border-white/20 border-t-white rounded-3xl animate-spin" 
-                    />
+                    <span className="inline-block mt-1 mr-1.5 w-4 h-4 border-2 border-white/20 border-t-white rounded-3xl animate-spin" />
                   )}
                   {loading ? "Generating..." : "Generate my result"}
                 </button>
@@ -207,6 +211,100 @@ export default function InterviewHome() {
                 Our AI engine benchmarks your profile against standards from
                 top-tier tech firms.
               </p>
+            </div>
+          </div>
+
+          {/* Generated Reports */}
+          <div className="lg:col-span-12 bg-[#1c1b1c] border border-[#584049] rounded-2xl p-6 md:p-8 shadow-xl mt-10">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between mb-6">
+              <div>
+                <p className="text-sm font-semibold tracking-wide uppercase text-pink-300">
+                  Generated Reports
+                </p>
+                <h2 className="text-2xl md:text-3xl font-bold mt-2">
+                  Previous resume matches
+                </h2>
+              </div>
+
+              <p className="text-sm text-[#dfbec9]">
+                Review your latest AI-generated role alignment snapshots.
+              </p>
+            </div>
+
+            <div
+              className={`grid grid-cols-1 ${!report ? "md:grid-cols-1" : "md:grid-cols-3"} gap-4`}
+            >
+              {!report || report.length === 0 ? (
+                <div className="md:col-span-3 border border-dashed border-[#584049] bg-[#2a2a2b]/60 rounded-2xl px-6 py-12 flex flex-col items-center justify-center text-center">
+                  <h3 className="text-2xl font-semibold italic  text-white mb-5">
+                    No reports yet
+                  </h3>
+                  <p className="text-[#dfbec9] text-sm leading-6 max-w-md">
+                    Generate your first resume match report and it will appear
+                    here.
+                  </p>
+                </div>
+              ) : (
+                report?.map((item) => (
+                  <div
+                    key={item._id}
+                    className="bg-[#2a2a2b] border border-[#584049] rounded-2xl p-5 transition hover:border-pink-400/70 hover:bg-[#302f31] cursor-pointer"
+                    onClick={() => navigation(`/result/${item._id}`)}
+                  >
+                    <div className="flex items-start justify-between gap-4 mb-5">
+                      <div className="bg-pink-500/10 h-11 w-11 rounded-xl flex items-center justify-center text-pink-300 text-lg">
+                        📄
+                      </div>
+
+                      <div className="flex gap-3">
+                        <div className="px-3 py-1 rounded-full bg-pink-500/10 border border-pink-400/40 text-pink-200 text-sm font-semibold">
+                          {item.matchScore}%
+                        </div>
+
+                        <div
+                          className="px-3 py-1 rounded-full bg-pink-500/10 border border-pink-400/40 text-pink-200 text-sm font-semibold"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleDeleteReportById(item._id);
+                          }}
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-4 w-4"
+                            aria-hidden="true"
+                          >
+                            <path d="M3 6h18" />
+                            <path d="M8 6V4h8v2" />
+                            <path d="M19 6l-1 14H6L5 6" />
+                            <path d="M10 11v6" />
+                            <path d="M14 11v6" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+
+                    <h3 className="font-semibold text-lg text-white mb-3">
+                      {item.title}
+                    </h3>
+
+                    <div className="flex items-center justify-between gap-4 border-t border-[#584049] pt-4">
+                      <span className="text-sm text-[#dfbec9] text-right">
+                        {new Date(item.createdAt).toLocaleDateString("en-us", {
+                          month: "short",
+                          day: "numeric",
+                          year: "numeric",
+                        })}
+                      </span>
+                    </div>
+                  </div>
+                ))
+              )}
             </div>
           </div>
         </div>

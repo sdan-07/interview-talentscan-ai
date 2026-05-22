@@ -16,13 +16,6 @@ const Login = () => {
     nav('/home')
   };
 
-  if (loading)
-    return (
-      <div className="flex min-h-screen justify-center items-center">
-        <h1>Please wait. Loading....</h1>
-      </div>
-    );
-
   return (
     <main>
       <div className="h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 flex items-center justify-center p-4 overflow-hidden relative">
@@ -79,6 +72,11 @@ const Login = () => {
               type="submit"
               className="w-full mt-4 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 transition duration-300 font-semibold text-lg shadow-lg shadow-cyan-500/30"
             >
+              {loading && (
+                <span
+                  className="inline-block mt-1 mr-1.5 w-4 h-4 border-2 border-white/20 border-t-white rounded-3xl animate-spin" 
+                />
+              )}
               Sign In
             </button>
           </form>

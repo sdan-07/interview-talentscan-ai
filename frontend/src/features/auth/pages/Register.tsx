@@ -8,22 +8,14 @@ const Register = () => {
   const [password, setPassword] = useState("");
 
   const { loading, handleRegister } = useAuth();
-  
+
   const nav = useNavigate();
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await handleRegister({ username, email, password });
-    nav('/home')
+    nav("/home");
   };
-
-  if (loading)
-    return (
-      <div className="flex justify-center items-center min-h-screen">
-        <h1>Please wait. Loading....</h1>
-      </div>
-    );
-
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 flex items-center justify-center p-4 overflow-hidden relative">
@@ -55,7 +47,7 @@ const Register = () => {
               id="username"
               name="username"
               placeholder="Enter your full name"
-              onChange={e => setUsername(e.target.value)}
+              onChange={(e) => setUsername(e.target.value)}
               className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 focus:border-pink-400 focus:ring-2 focus:ring-pink-400 outline-none transition duration-300 placeholder-gray-400"
             />
           </div>
@@ -71,7 +63,7 @@ const Register = () => {
               id="email"
               name="email"
               placeholder="Enter your email"
-              onChange={e => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 focus:border-pink-400 focus:ring-2 focus:ring-pink-400 outline-none transition duration-300 placeholder-gray-400"
             />
           </div>
@@ -87,7 +79,7 @@ const Register = () => {
               id="password"
               name="password"
               placeholder="Create a password"
-              onChange={e => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
               className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 focus:border-pink-400 focus:ring-2 focus:ring-pink-400 outline-none transition duration-300 placeholder-gray-400"
             />
           </div>
@@ -97,6 +89,9 @@ const Register = () => {
             type="submit"
             className="w-full mt-4 py-3 rounded-xl bg-pink-500 hover:bg-pink-400 transition duration-300 font-semibold text-lg shadow-lg shadow-pink-500/30"
           >
+            {loading && (
+              <span className="inline-block mt-1 mr-1.5 w-4 h-4 border-2 border-white/20 border-t-white rounded-3xl animate-spin" />
+            )}
             Create Account
           </button>
         </form>

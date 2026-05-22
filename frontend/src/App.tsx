@@ -17,7 +17,7 @@ const App = () => {
           {/* All protected routes here */}
           <Route element={<ProtectedWrapper />}>
             <Route path="/home" element={<InterviewHome />} />
-            <Route path="/result" element={<ShowReport />} />
+            <Route path="/result/:id" element={<ShowReport />} />
 
           </Route>
         </Routes>

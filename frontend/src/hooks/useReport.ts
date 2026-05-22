@@ -1,35 +1,76 @@
-import { useContext } from "react"
-import { AuthContext } from "../context/authContext"
-import { generateReport } from "../services/api/ai.service";
+import { useContext, useEffect, useState } from "react"
+import { deleteReportById, fetchReport, fetchReportById, generateReport } from "../services/api/ai.service";
 import { InterviewContext } from "../context/interview.context";
-import type { generateReportType } from "../types/report.types";
+import type { generateReportType, reportType } from "../types/report.types";
+import { useParams } from "react-router-dom";
 
 interface useReportReturn{
     loading: boolean,
-    report: object | null,
-    handleGenerateReport: (report: generateReportType) => Promise<void>
+    report: reportType[] | null,
+    handleGenerateReport: (report: generateReportType) => Promise<reportType | null>,
+    handleFetchReport: () => Promise<void>,
+    handleFetchReportById: (reportId: string) => Promise<void>,
+    handleDeleteReportById: (reportId: string) => Promise<void>
 }
 
 export const useReport = (): useReportReturn => {
-    
-    const loadingContext = useContext(AuthContext);
     const reportContext = useContext(InterviewContext);
-    if(!loadingContext || !reportContext)
-        throw new Error("Auth and interview report variables must be provided within React Context");
+    if(!reportContext)
+        throw new Error("Interview report variables must be provided within React Context");
+
+    const { reportId } = useParams();
     
-    const { loading, setLoading } = loadingContext;
+    const [loading, setLoading] = useState(false);
     const { report, setReport } = reportContext;
 
     const handleGenerateReport = async ({ resume, jobDescription, selfDescription }: generateReportType) => {
         setLoading(true);
         try {
-            const data = await generateReport({ resume, jobDescription, selfDescription });
-            setReport(data.report)
+            return await generateReport({ resume, jobDescription, selfDescription });
+        }catch(err){
+            console.error(err);
+            return null;
         } finally {
             setLoading(false);
         }
     }
 
-    return { loading, report, handleGenerateReport };
+    const handleFetchReport = async () => {
+
+        try {
+            const data = await fetchReport();
+            setReport(data.report);
+        }catch(err){
+            console.error(err);
+        }
+    }
+
+    const handleFetchReportById = async (reportId: string) => {
+
+        try {
+            const data = await fetchReportById(reportId);
+            setReport(data.report);
+        }catch(err){
+            console.error(err);
+        }
+    }
+
+    const handleDeleteReportById = async (reportId: string) => {
+        try{
+            const data = await deleteReportById(reportId);
+            setReport(data.report);
+        }catch(err){
+            console.error(err);
+        }
+    }
+
+    useEffect(()=>{
+        if (reportId)
+            handleFetchReportById(reportId);
+        else
+            handleFetchReport();
+    },[reportId]);
+
+    return { loading, report, handleGenerateReport, handleFetchReport, handleFetchReportById, handleDeleteReportById };
 
 }

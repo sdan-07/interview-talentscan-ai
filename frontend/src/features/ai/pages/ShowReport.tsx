@@ -1,51 +1,29 @@
-import { useState } from "react";
-
-const technicalQuestions = [
-  {
-    category: "Architecture",
-    question:
-      "Explain the CAP theorem and how it applies to distributed microservices?",
-    intention:
-      "To assess understanding of distributed systems trade-offs.",
-    answer:
-      "In distributed systems, you can only guarantee two out of Consistency, Availability, and Partition Tolerance.",
-  },
-  {
-    category: "Database",
-    question:
-      "How would you handle high-throughput write operations in a relational database?",
-    intention:
-      "Evaluate database scaling and write optimization knowledge.",
-    answer:
-      "I'd use horizontal sharding and Kafka buffering for async writes.",
-  },
-  {
-    category: "System Design",
-    question: "Design a scalable rate-limiting system for a public API.",
-    intention:
-      "Testing ability to handle distributed state and scalability.",
-    answer:
-      "Using Redis with a token bucket algorithm provides scalable distributed rate limiting.",
-  },
-];
-
-const behavioralQuestions = [
-  {
-    category: "Leadership",
-    question:
-      "Tell me about a time you managed a technical conflict within your team.",
-    intention:
-      "Assess emotional intelligence and conflict resolution.",
-    answer:
-      "I focus on objective data and prototypes to align teams.",
-  },
-];
+import { useEffect, useState } from "react";
+import { useReport } from "../../../hooks/useReport";
+import type { QuestionType } from "../../../types/report.types";
 
 export default function ShowReport() {
-  const [activeTab, setActiveTab] = useState("roadmap");
+  const [activeTab, setActiveTab] = useState("technical");
   const [openAccordion, setOpenAccordion] = useState<number | null>(0);
 
-  const renderAccordion = (items: any[]) => {
+  const { report, handleFetchReport } = useReport();
+  const currentReport = report?.at(-1) ?? null;
+  const formatSeverity = (severity = "low") =>
+    severity.charAt(0).toUpperCase() + severity.slice(1);
+
+  const displayReport = async () => {
+    await handleFetchReport();
+  }
+
+  useEffect(()=>{
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    displayReport()
+  },[]);
+
+  console.log(report);
+  
+
+  const renderAccordion = (items: QuestionType[]) => {
     return items.map((item, index) => (
       <div
         key={index}
@@ -89,7 +67,7 @@ export default function ShowReport() {
                 mb-4
               "
             >
-              {item.category}
+              {item.category ?? activeTab}
             </span>
 
             <h3
@@ -376,14 +354,14 @@ export default function ShowReport() {
           {/* Technical */}
           {activeTab === "technical" && (
             <div className="space-y-6">
-              {renderAccordion(technicalQuestions)}
+              {renderAccordion(currentReport?.technicalQuestions || [])}
             </div>
           )}
 
           {/* Behavioral */}
           {activeTab === "behavioral" && (
             <div className="space-y-6">
-              {renderAccordion(behavioralQuestions)}
+              {renderAccordion(currentReport?.behavioralQuestions || [])}
             </div>
           )}
 
@@ -392,7 +370,7 @@ export default function ShowReport() {
             <div className="space-y-10">
               <div className="flex items-center justify-between flex-wrap gap-4">
                 <h2 className="text-4xl font-bold text-white">
-                  3-Day Preparation Roadmap
+                  {currentReport?.preparationPlan?.length}-Day Preparation Roadmap
                 </h2>
 
                 <div
@@ -409,8 +387,12 @@ export default function ShowReport() {
                 </div>
               </div>
 
-              {[1, 2, 3].map((day) => (
-                <div key={day} className="flex gap-6">
+              {(currentReport?.preparationPlan || []).map((plan, index) => {
+                const daySkillGap = currentReport?.skillGaps?.[index];
+                const dayDifficulty = formatSeverity(daySkillGap?.severity);
+
+                return (
+                  <div key={plan.day} className="flex gap-6">
                   {/* Timeline */}
                   <div className="flex flex-col items-center">
                     <div
@@ -425,10 +407,10 @@ export default function ShowReport() {
                         shadow-lg shadow-pink-500/20
                       "
                     >
-                      {day}
+                      {plan.day}
                     </div>
 
-                    {day !== 3 && (
+                    {plan.day !== 3 && (
                       <div
                         className="
                           w-[2px]
@@ -456,7 +438,7 @@ export default function ShowReport() {
                     "
                   >
                     <h3 className="text-2xl font-bold mb-5">
-                      Day {day}: Preparation Focus
+                      Day {plan.day}: Preparation Focus
                     </h3>
 
                     <div
@@ -472,7 +454,9 @@ export default function ShowReport() {
                         <span className="font-bold">
                           Urgent Skill Gap:
                         </span>{" "}
-                        Kubernetes / Kafka / Security
+                        {(currentReport?.skillGaps || [])
+                          .map((gap) => gap.skill)
+                          .join(" / ") || "No urgent gaps found"}
                       </p>
                     </div>
 
@@ -495,25 +479,23 @@ export default function ShowReport() {
                             text-green-300
                           "
                         >
-                          Low
+                          {dayDifficulty}
                         </span>
                       </div>
                     </div>
 
                     <ul className="space-y-4 text-[#d3c1ca]">
-                      <li className="flex gap-3">
-                        <span className="text-pink-300">✦</span>
-                        Review distributed systems concepts.
-                      </li>
-
-                      <li className="flex gap-3">
-                        <span className="text-pink-300">✦</span>
-                        Practice real-world system design problems.
-                      </li>
+                      {plan.tasks.map((task) => (
+                        <li key={task} className="flex gap-3">
+                          <span className="text-pink-300">✦</span>
+                          {task}
+                        </li>
+                      ))}
                     </ul>
                   </div>
-                </div>
-              ))}
+                  </div>
+                );
+              })}
             </div>
           )}
         </section>
@@ -581,7 +563,7 @@ export default function ShowReport() {
 
               <div className="absolute inset-0 flex flex-col items-center justify-center">
                 <span className="text-5xl font-black text-pink-300">
-                  93%
+                  {currentReport?.matchScore}%
                 </span>
 
                 <span className="text-sm text-[#a6959d] mt-2">
@@ -605,7 +587,7 @@ export default function ShowReport() {
             </h3>
 
             <div className="flex flex-wrap gap-3">
-              {["Kafka", "Redis", "Kubernetes", "OAuth2"].map(
+              {currentReport?.missingSkills.map(
                 (skill) => (
                   <span
                     key={skill}
