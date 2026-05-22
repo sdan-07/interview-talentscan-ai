@@ -10,6 +10,7 @@ interface reportType extends Document{
     skillGaps: [ object ],
     preparationPlan: [ object ],
     matchScore: number,
+    missingSkills: [string],
     user: any
 }
 
@@ -34,6 +35,10 @@ interface preparationPlanType extends Document{
     day: number,
     focus: string,
     tasks: [string]
+}
+
+interface missingSkillsType extends Document{
+    skill: string
 }
 
 const technicalQuestionsSchema = new mongoose.Schema<technicalQuestionsType>({
@@ -90,6 +95,7 @@ const reportSchema = new mongoose.Schema<reportType>({
         max: 100,
         required: [true, "Match Score is required"]
     },
+    missingSkills: [String],
     technicalQuestions: [ technicalQuestionsSchema ],
     behavioralQuestions: [ behavioralQuestionsSchema ],
     skillGaps: [ skillGapsSchema ],

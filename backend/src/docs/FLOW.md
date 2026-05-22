@@ -6,6 +6,6 @@
 
 -Model sends server with a structured interview report containing Technincal Qs, Behaviourial Qs, Skill gaps and Preparation Plan.
 
--Load to Database.
+-Loads to Database.
 
--Send the report as a response to Client.
+-Sends the report as a response to Client.

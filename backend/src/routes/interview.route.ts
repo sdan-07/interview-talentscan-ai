@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { verifyToken, blacklistToken } from "../middlewares/auth.middleware.js";
-import { fetchReport, generateReport } from "../controllers/interview.controller.js";
+import { fetchReport, fetchReportById, generateReport } from "../controllers/interview.controller.js";
 import { upload } from "../middlewares/file.middleware.js";
 
 const router = Router();
@@ -18,6 +18,13 @@ router.get(
     blacklistToken,
     verifyToken,
     fetchReport
+)
+
+router.get(
+    '/fetchid/:id',
+    blacklistToken,
+    verifyToken,
+    fetchReportById
 )
 
 export default router;
