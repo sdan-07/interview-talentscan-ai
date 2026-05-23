@@ -26,6 +26,8 @@ app.use(cookieParser());
 app.use('/api/auth', authRouter);
 app.use('/api/ai', interviewRouter);
 
+app.use(express.static(publicPath));
+
 // SPA fallback
 app.get('/{*path}', (_, res: Response): void => {
     res.sendFile(path.join(publicPath, 'index.html'));
