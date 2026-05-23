@@ -48,6 +48,10 @@ export interface GenerateReportResponse {
   report: reportType[];
 }
 
+export interface FetchReportByIdResponse {
+  report: reportType;
+}
+
 export interface CreateReportResponse {
   report: reportType;
 }

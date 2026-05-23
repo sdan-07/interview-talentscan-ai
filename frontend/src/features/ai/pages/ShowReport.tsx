@@ -1,27 +1,24 @@
 import { useEffect, useState } from "react";
 import { useReport } from "../../../hooks/useReport";
 import type { QuestionType } from "../../../types/report.types";
+import NotFound from "../../NotFound";
 
 export default function ShowReport() {
   const [activeTab, setActiveTab] = useState("technical");
   const [openAccordion, setOpenAccordion] = useState<number | null>(0);
 
-  const { report, handleFetchReport } = useReport();
+  const { report, reportNotFound } = useReport();
   const currentReport = report?.at(-1) ?? null;
   const formatSeverity = (severity = "low") =>
     severity.charAt(0).toUpperCase() + severity.slice(1);
 
-  const displayReport = async () => {
-    await handleFetchReport();
-  }
-
   useEffect(()=>{
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-    displayReport()
   },[]);
 
-  console.log(report);
-  
+  if (reportNotFound) {
+    return <NotFound />;
+  }
 
   const renderAccordion = (items: QuestionType[]) => {
     return items.map((item, index) => (
@@ -274,6 +271,7 @@ export default function ShowReport() {
                 rounded-2xl
                 capitalize
                 transition-all duration-300
+                cursor-pointer
                 border
                 ${
                   activeTab === tab
@@ -322,7 +320,7 @@ export default function ShowReport() {
                 max-w-4xl
               "
             >
-              Your Technical Profile Is{" "}
+              {(currentReport?.matchScore ?? 0) <= 77 ? "Uh-oh! Your Profile Requires" : "Excellent! Your Profile shows"}  <br />{" "}
               <span
                 className="
                   bg-gradient-to-r
@@ -332,7 +330,7 @@ export default function ShowReport() {
                   text-transparent
                 "
               >
-                Strongly Matched
+                {(currentReport?.matchScore ?? 0) <= 77 ? "Better Alignment" : "High Match Score"}
               </span>
             </h2>
 
@@ -345,7 +343,7 @@ export default function ShowReport() {
                 max-w-3xl
               "
             >
-              We benchmarked your engineering profile against Lead
+              We benchmarked your profile against Lead
               Architect-level requirements and generated optimized
               preparation insights.
             </p>
@@ -567,7 +565,7 @@ export default function ShowReport() {
                 </span>
 
                 <span className="text-sm text-[#a6959d] mt-2">
-                  Strong Match
+                  {(currentReport?.matchScore ?? 0) <= 75 ? "Weak match" : "Strong match" }
                 </span>
               </div>
             </div>

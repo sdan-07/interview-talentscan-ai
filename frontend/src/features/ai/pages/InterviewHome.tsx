@@ -34,7 +34,7 @@ export default function InterviewHome() {
       jobDescription,
       selfDescription,
     });
-    if (generate?._id) navigation(`/result/${generate._id}`);
+    if (generate?._id) navigation(`/report/${generate._id}`);
   };
 
   return (
@@ -42,12 +42,12 @@ export default function InterviewHome() {
       {/* Hero Section */}
       <section className="px-6 py-16 md:px-12 md:py-24 text-center max-w-7xl mx-auto">
         <h1 className="text-3xl md:text-5xl font-bold text-pink-300 mb-4">
-          Optimize Your Tech Stack Alignment
+          Transform Your Resume with AI Insights
         </h1>
 
         <p className="max-w-3xl mx-auto text-[#dfbec9] text-base md:text-lg leading-7">
-          AI-powered resume analysis to match your technical skills with
-          high-growth engineering roles. Upload your profile and get deep
+          AI-powered resume analysis to match your overall skills with
+          high-growth job roles. Upload your profile and get deep
           insights on architecture patterns and keyword relevance.
         </p>
       </section>
@@ -129,12 +129,12 @@ export default function InterviewHome() {
                     rows={8}
                     required
                     onChange={(e) => setJobDescription(e.target.value)}
-                    placeholder="Paste the technical job requirements here..."
+                    placeholder="Paste the job posting and its requirements here..."
                     className="w-full rounded-2xl bg-[#353436] border border-[#584049] p-4 text-white placeholder:text-[#a68993] focus:outline-none focus:ring-2 focus:ring-pink-400"
                   />
                 </div>
 
-                {/* Technical Profile */}
+                {/* Self Description */}
                 <div className="space-y-3">
                   <label
                     htmlFor="self-desc"
@@ -160,12 +160,12 @@ export default function InterviewHome() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full md:w-auto px-10 py-4 rounded-2xl bg-pink-600 hover:bg-pink-500 text-white font-semibold shadow-lg transition active:scale-95"
+                  className="w-full md:w-auto px-8 py-4 rounded-2xl bg-pink-600 hover:bg-pink-500 text-white font-semibold shadow-lg transition active:scale-95 cursor-pointer"
                 >
                   {loading && (
                     <span className="inline-block mt-1 mr-1.5 w-4 h-4 border-2 border-white/20 border-t-white rounded-3xl animate-spin" />
                   )}
-                  {loading ? "Generating..." : "Generate my result"}
+                  {loading ?  "Generating..." : (<><span className="brightness-0 invert">✨</span>  Generate my report</>)}
                 </button>
               </div>
             </form>
@@ -183,8 +183,7 @@ export default function InterviewHome() {
                 <h3 className="font-semibold mb-1">Instant Analysis</h3>
 
                 <p className="text-[#dfbec9] text-sm leading-6">
-                  Get deep technical insights on your stack alignment and
-                  architecture patterns in seconds.
+                  Instantly identify weak areas, missing skills, and optimization opportunities in your resume.
                 </p>
               </div>
             </div>
@@ -203,19 +202,18 @@ export default function InterviewHome() {
               <div className="flex items-center gap-2 mb-2">
                 <span>✔️</span>
                 <span className="font-semibold uppercase text-sm tracking-wide">
-                  Engineering Grade
+                  Smart Hiring Insights
                 </span>
               </div>
 
               <p className="text-sm leading-6 opacity-90">
-                Our AI engine benchmarks your profile against standards from
-                top-tier tech firms.
+                Receive intelligent feedback tailored to improve your chances of landing interviews.
               </p>
             </div>
           </div>
 
           {/* Generated Reports */}
-          <div className="lg:col-span-12 bg-[#1c1b1c] border border-[#584049] rounded-2xl p-6 md:p-8 shadow-xl mt-10">
+          <div className="lg:col-span-12 bg-[#1c1b1c] border border-[#584049] rounded-2xl p-6 md:p-8 shadow-xl mt-15">
             <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between mb-6">
               <div>
                 <p className="text-sm font-semibold tracking-wide uppercase text-pink-300">
@@ -249,11 +247,11 @@ export default function InterviewHome() {
                   <div
                     key={item._id}
                     className="bg-[#2a2a2b] border border-[#584049] rounded-2xl p-5 transition hover:border-pink-400/70 hover:bg-[#302f31] cursor-pointer"
-                    onClick={() => navigation(`/result/${item._id}`)}
+                    onClick={() => navigation(`/report/${item._id}`)}
                   >
                     <div className="flex items-start justify-between gap-4 mb-5">
                       <div className="bg-pink-500/10 h-11 w-11 rounded-xl flex items-center justify-center text-pink-300 text-lg">
-                        📄
+                        📝
                       </div>
 
                       <div className="flex gap-3">

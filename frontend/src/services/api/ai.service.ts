@@ -1,12 +1,13 @@
 import axios from "axios";
 import type {
   CreateReportResponse,
+  FetchReportByIdResponse,
   GenerateReportResponse,
   generateReportType,
   reportType,
 } from "../../types/report.types";
 
-const apiUrl = "http://localhost:5080";
+const apiUrl = import.meta.env.VITE_API_URL ?? "http://localhost:5080";
 
 const api = axios.create({
   baseURL: `${apiUrl}/api/ai`,
@@ -33,7 +34,7 @@ export const fetchReport = async (): Promise<GenerateReportResponse> => {
   return response.data;
 }
 
-export const fetchReportById = async (reportId: string): Promise<GenerateReportResponse> => {
+export const fetchReportById = async (reportId: string): Promise<FetchReportByIdResponse> => {
 
   const response = await api.get(`/fetchid/${reportId}`);
   return response.data;
@@ -43,5 +44,3 @@ export const deleteReportById = async (reportid: string): Promise<GenerateReport
   const response = await api.delete(`/removeid/${reportid}`)
   return response.data;
 }
-
-//ADD api_url env link
