@@ -23,10 +23,6 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser());
 
-app.get('/', (_,res)=> {
-    res.json({message: 'Server running'});
-})
-
 app.use('/api/auth', authRouter);
 app.use('/api/ai', interviewRouter);
 
