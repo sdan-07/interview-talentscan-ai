@@ -5,15 +5,21 @@ import { useAuth } from "../../../hooks/useAuth";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isInavlid, setIsInavlid] = useState(false)
 
   const { loading, handleLogin } = useAuth();
-  
+
   const nav = useNavigate();
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    await handleLogin({ email, password });
-    nav('/home')
+    const validUser = await handleLogin({ email, password });
+
+    if (validUser) {
+      nav("/home");
+    } else {
+      setIsInavlid(true)
+    }
   };
 
   return (
@@ -45,7 +51,7 @@ const Login = () => {
                 type="email"
                 placeholder="Enter your email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => {setEmail(e.target.value); setIsInavlid(false)}}
                 className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400 outline-none transition duration-300 placeholder-gray-400"
               />
             </div>
@@ -62,10 +68,16 @@ const Login = () => {
                 type="password"
                 placeholder="Enter your password"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => {setPassword(e.target.value); setIsInavlid(false)}}
                 className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400 outline-none transition duration-300 placeholder-gray-400"
               />
             </div>
+
+            {isInavlid && (
+              <p className="text-sm text-center text-red-500 -mb-0.5">
+                Invalid email or password
+              </p>
+            )}
 
             {/* Button */}
             <button
@@ -73,9 +85,7 @@ const Login = () => {
               className="w-full mt-4 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 transition duration-300 font-semibold text-lg shadow-lg shadow-cyan-500/30"
             >
               {loading && (
-                <span
-                  className="inline-block mt-1 mr-1.5 w-4 h-4 border-2 border-white/20 border-t-white rounded-3xl animate-spin" 
-                />
+                <span className="inline-block mt-1 mr-1.5 w-4 h-4 border-2 border-white/20 border-t-white rounded-3xl animate-spin" />
               )}
               Sign In
             </button>

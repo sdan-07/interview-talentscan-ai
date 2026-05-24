@@ -4,18 +4,25 @@ import type { User } from "../types/user.types";
 import { login, register, logout } from "../services/api/auth.service";
 import { getme } from "../services/api/auth.service";
 
-type LoginCredentials = Pick<User, "email" | "password">;
-// type RegisterCredentials = Pick<User, "username" | "email" | "password">;
+type LoginCredentials = {
+  email: string;
+  password: string;
+};
+type RegisterCredentials = {
+  username: string;
+  email: string;
+  password: string;
+};
 
 interface AuthResponse {
-  user: User | null;
+  user?: User;
 }
 
 interface useAuthReturn {
   user: User | null;
   loading: boolean;
-  handleRegister: (user: User) => Promise<void>;
-  handleLogin: (user: LoginCredentials) => Promise<void>;
+  handleRegister: (user: RegisterCredentials) => Promise<User | null>;
+  handleLogin: (user: LoginCredentials) => Promise<User | null>;
   handleLogout: () => Promise<void>;
 }
 
@@ -31,7 +38,7 @@ export const useAuth = (): useAuthReturn => {
     username,
     email,
     password,
-  }: User): Promise<void> => {
+  }: RegisterCredentials): Promise<User | null> => {
     setLoading(true);
 
     try {
@@ -39,10 +46,19 @@ export const useAuth = (): useAuthReturn => {
         username,
         email,
         password,
-      })) as unknown as AuthResponse;
+      })) as AuthResponse | undefined;
+
+      if (!data?.user) {
+        setUser(null);
+        return null;
+      }
+
       setUser(data.user);
+      return data.user;
+
     } catch (e) {
       console.error(e);
+      return null;
     } finally {
       setLoading(false);
     }
@@ -51,19 +67,30 @@ export const useAuth = (): useAuthReturn => {
   const handleLogin = async ({
     email,
     password,
-  }: LoginCredentials): Promise<void> => {
+  }: LoginCredentials): Promise<User | null> => {
     setLoading(true);
 
     try {
       const data = (await login({
         email,
         password,
-      })) as unknown as AuthResponse;
+      })) as AuthResponse | undefined;
+
       console.log(data);
 
+      if (!data?.user) {
+        setUser(null);
+        return null;
+      }
+
       setUser(data.user);
+      
+      return data.user;
+
     } catch (e) {
       console.error(e);
+      setUser(null);
+      return null;
     } finally {
       setLoading(false);
     }

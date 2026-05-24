@@ -15,7 +15,7 @@ const publicPath = path.join(__dirname, '..', 'public');
 
 
 app.use(cors({
-    origin: process.env.APP_URL ?? "http://localhost:5173",
+    origin: process.env.APP_URL || true,
     methods: ['POST', 'GET', 'PUT', 'DELETE'],
     credentials: true
 }));

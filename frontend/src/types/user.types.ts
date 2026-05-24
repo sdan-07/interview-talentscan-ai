@@ -1,7 +1,7 @@
 export interface User{
     username: string,
     email: string,
-    password: string
+    password?: string
 }
 
 export interface AuthContextType {
@@ -9,4 +9,9 @@ export interface AuthContextType {
     setUser: (user: User | null) => void;
     loading: boolean;
     setLoading: (loading: boolean) => void;
+}
+
+export interface UserLoginCredential {
+    username: string,
+    email: string
 }

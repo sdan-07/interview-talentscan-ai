@@ -13,8 +13,10 @@ const Register = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    await handleRegister({ username, email, password });
-    nav("/home");
+    const validUser = await handleRegister({ username, email, password });
+    
+    if(validUser) 
+      nav("/home");
   };
 
   return (

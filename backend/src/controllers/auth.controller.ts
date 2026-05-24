@@ -31,10 +31,7 @@ export const register = async (req: Request, res: Response): Promise<void> => {
   );
   
   //store to cookies
-  res.cookie("userToken", token, {
-    secure: process.env.NODE_ENV === "production",
-    httpOnly: true,
-  });
+  res.cookie("userToken", token);
 
   res.status(201).json({ 
     status: "success", 
@@ -68,10 +65,7 @@ export const login = async (req: Request, res: Response): Promise<void> => {
   })
 
   //store to cookies
-  res.cookie("userToken", token, {
-    secure: process.env.NODE_ENV === "production",
-    httpOnly: true,
-  })
+  res.cookie("userToken", token)
 
   res.status(200).json({
     status: "success",
@@ -86,7 +80,7 @@ export const logout = async (req: Request, res:Response): Promise<void> => {
   const token = req.cookies.userToken;
   await blacklistModel.create({ token });
 
-  res.clearCookie("userToken");
+  res.clearCookie("userToken", cookieOptions);
   res.status(200).json({status: "success", message: "Logged out"});
 }
 

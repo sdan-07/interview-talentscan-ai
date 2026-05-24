@@ -7,7 +7,7 @@ import type {
   reportType,
 } from "../../types/report.types";
 
-const apiUrl = import.meta.env.VITE_API_URL ?? "http://localhost:5080";
+const apiUrl = import.meta.env.VITE_API_URL ?? "";
 
 const api = axios.create({
   baseURL: `${apiUrl}/api/ai`,

@@ -1,9 +1,7 @@
 import axios from "axios";
 import type { User } from "../../types/user.types";
 
-const apiUrl = "http://localhost:5080";
-
-//add import.meta.env.VITE_API_URL || 
+const apiUrl = import.meta.env.VITE_API_URL ?? "";
 
 interface RegisterPayload{
     username: string,
@@ -51,16 +49,11 @@ export const login = async ({
   password,
 }:LoginPayload): Promise<AuthResponse | undefined> => {
 
-  try{
-    const response = await api.post(`/login`, {
-      
-      email,
-      password,
-    })
-    return response.data;
-  }catch(e){
-    console.error(e)
-  }
+  const response = await api.post(`/login`, {
+    email,
+    password,
+  })
+  return response.data;
 }
 
 export const logout = async (): Promise<AuthResponse | undefined> => {
