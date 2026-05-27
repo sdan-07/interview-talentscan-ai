@@ -5,7 +5,7 @@ import Register from "./features/auth/pages/Register";
 import ProtectedWrapper from "./features/auth/pages/ProtectedWrapper";
 import InterviewHome from "./features/ai/pages/InterviewHome";
 import ShowReport from "./features/ai/pages/ShowReport";
-import NotFound from "./features/NotFound";
+import NotFound from "./components/NotFound";
 
 const App = () => {
   return (

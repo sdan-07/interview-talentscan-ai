@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useReport } from "../../../hooks/useReport";
 import type { QuestionType } from "../../../types/report.types";
-import NotFound from "../../NotFound";
+import NotFound from "../../../components/NotFound";
+import UserMenu from "../../../components/UserMenu";
 
 export default function ShowReport() {
   const [activeTab, setActiveTab] = useState("technical");
@@ -197,6 +198,17 @@ export default function ShowReport() {
         px-32
       "
     >
+      {/* navbar */}
+      <header className="sticky top-0 z-40 border-b border-white/5 bg-[#131314]/85 backdrop-blur-xl">
+              <div className="flex max-w-[1700px] items-center justify-between py-4">
+                
+                  <p className=" font-semibold uppercase tracking-[0.2em] text-pink-300">
+                    TalentScan AI <span className="text-4xl">.</span>
+                  </p>
+                <UserMenu />
+              </div>
+            </header>
+
       {/* Background Glow */}
       <div
         className="

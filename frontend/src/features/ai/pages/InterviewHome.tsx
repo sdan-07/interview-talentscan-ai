@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { useReport } from "../../../hooks/useReport";
 import { useNavigate } from "react-router-dom";
+import UserMenu from "../../../components/UserMenu";
 
 export default function InterviewHome() {
   const [dragActive, setDragActive] = useState(false);
@@ -39,8 +40,23 @@ export default function InterviewHome() {
 
   return (
     <main className="min-h-screen bg-[#131314] text-[#e5e2e3] font-sans">
+      <header className="sticky top-0 z-40 border-b border-white/5 bg-[#131314]/85 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-12">
+          <div>
+            <p className=" font-semibold uppercase tracking-[0.2em] text-pink-300">
+              TalentScan AI <span className="text-4xl">.</span>
+            </p>
+            {/* <p className="mt-1 text-sm text-[#dfbec9]">
+              Resume intelligence workspace
+            </p> */}
+          </div>
+
+          <UserMenu />
+        </div>
+      </header>
+
       {/* Hero Section */}
-      <section className="px-6 py-16 md:px-12 md:py-24 text-center max-w-7xl mx-auto">
+      <section className="px-6 py-14 md:px-12 md:py-20 text-center max-w-7xl mx-auto">
         <h1 className="text-3xl md:text-5xl font-bold text-pink-300 mb-4">
           Transform Your Resume with AI Insights
         </h1>
