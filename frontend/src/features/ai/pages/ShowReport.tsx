@@ -3,6 +3,7 @@ import { useReport } from "../../../hooks/useReport";
 import type { QuestionType } from "../../../types/report.types";
 import NotFound from "../../../components/NotFound";
 import UserMenu from "../../../components/UserMenu";
+import { Link } from "react-router-dom";
 
 export default function ShowReport() {
   const [activeTab, setActiveTab] = useState("technical");
@@ -13,9 +14,9 @@ export default function ShowReport() {
   const formatSeverity = (severity = "low") =>
     severity.charAt(0).toUpperCase() + severity.slice(1);
 
-  useEffect(()=>{
+  useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-  },[]);
+  }, []);
 
   if (reportNotFound) {
     return <NotFound />;
@@ -200,14 +201,15 @@ export default function ShowReport() {
     >
       {/* navbar */}
       <header className="sticky top-0 z-40 border-b border-white/5 bg-[#131314]/85 backdrop-blur-xl">
-              <div className="flex max-w-[1700px] items-center justify-between py-4">
-                
-                  <p className=" font-semibold uppercase tracking-[0.2em] text-pink-300">
-                    TalentScan AI <span className="text-4xl">.</span>
-                  </p>
-                <UserMenu />
-              </div>
-            </header>
+        <div className="flex max-w-[1700px] items-center justify-between py-4">
+          <Link to="/home">
+            <p className="font-semibold uppercase tracking-[0.2em] text-pink-300 cursor-pointer">
+              TalentScan AI <span className="text-4xl">.</span>
+            </p>
+          </Link>
+          <UserMenu />
+        </div>
+      </header>
 
       {/* Background Glow */}
       <div
@@ -332,7 +334,10 @@ export default function ShowReport() {
                 max-w-4xl
               "
             >
-              {(currentReport?.matchScore ?? 0) <= 77 ? "Uh-oh! Your Profile Requires" : "Excellent! Your Profile shows"}  <br />{" "}
+              {(currentReport?.matchScore ?? 0) <= 77
+                ? "Uh-oh! Your Profile Requires"
+                : "Excellent! Your Profile shows"}{" "}
+              <br />{" "}
               <span
                 className="
                   bg-gradient-to-r
@@ -342,7 +347,9 @@ export default function ShowReport() {
                   text-transparent
                 "
               >
-                {(currentReport?.matchScore ?? 0) <= 77 ? "Better Alignment" : "High Match Score"}
+                {(currentReport?.matchScore ?? 0) <= 77
+                  ? "Better Alignment"
+                  : "High Match Score"}
               </span>
             </h2>
 
@@ -355,9 +362,8 @@ export default function ShowReport() {
                 max-w-3xl
               "
             >
-              We benchmarked your profile against Lead
-              Architect-level requirements and generated optimized
-              preparation insights.
+              We benchmarked your profile against Lead Architect-level
+              requirements and generated optimized preparation insights.
             </p>
           </div>
 
@@ -380,7 +386,8 @@ export default function ShowReport() {
             <div className="space-y-10">
               <div className="flex items-center justify-between flex-wrap gap-4">
                 <h2 className="text-4xl font-bold text-white">
-                  {currentReport?.preparationPlan?.length}-Day Preparation Roadmap
+                  {currentReport?.preparationPlan?.length}-Day Preparation
+                  Roadmap
                 </h2>
 
                 <div
@@ -403,10 +410,10 @@ export default function ShowReport() {
 
                 return (
                   <div key={plan.day} className="flex gap-6">
-                  {/* Timeline */}
-                  <div className="flex flex-col items-center">
-                    <div
-                      className="
+                    {/* Timeline */}
+                    <div className="flex flex-col items-center">
+                      <div
+                        className="
                         w-11 h-11
                         rounded-2xl
                         bg-gradient-to-br
@@ -416,13 +423,13 @@ export default function ShowReport() {
                         font-bold
                         shadow-lg shadow-pink-500/20
                       "
-                    >
-                      {plan.day}
-                    </div>
+                      >
+                        {plan.day}
+                      </div>
 
-                    {plan.day !== 3 && (
-                      <div
-                        className="
+                      {plan.day !== 3 && (
+                        <div
+                          className="
                           w-[2px]
                           flex-1
                           bg-gradient-to-b
@@ -430,13 +437,13 @@ export default function ShowReport() {
                           to-transparent
                           mt-3
                         "
-                      />
-                    )}
-                  </div>
+                        />
+                      )}
+                    </div>
 
-                  {/* Card */}
-                  <div
-                    className="
+                    {/* Card */}
+                    <div
+                      className="
                       flex-1
                       bg-[#1b1b1d]/80
                       backdrop-blur-xl
@@ -446,39 +453,37 @@ export default function ShowReport() {
                       hover:border-pink-500/20
                       transition-all duration-300
                     "
-                  >
-                    <h3 className="text-2xl font-bold mb-5">
-                      Day {plan.day}: Preparation Focus
-                    </h3>
+                    >
+                      <h3 className="text-2xl font-bold mb-5">
+                        Day {plan.day}: Preparation Focus
+                      </h3>
 
-                    <div
-                      className="
+                      <div
+                        className="
                         bg-red-500/10
                         border border-red-400/20
                         rounded-2xl
                         p-5
                         mb-5
                       "
-                    >
-                      <p className="text-red-300 leading-7">
-                        <span className="font-bold">
-                          Urgent Skill Gap:
-                        </span>{" "}
-                        {(currentReport?.skillGaps || [])
-                          .map((gap) => gap.skill)
-                          .join(" / ") || "No urgent gaps found"}
-                      </p>
-                    </div>
+                      >
+                        <p className="text-red-300 leading-7">
+                          <span className="font-bold">Urgent Skill Gap:</span>{" "}
+                          {(currentReport?.skillGaps || [])
+                            .map((gap) => gap.skill)
+                            .join(" / ") || "No urgent gaps found"}
+                        </p>
+                      </div>
 
-                    {/* Priority Badge */}
-                    <div className="flex items-center gap-3 mb-6 flex-wrap">
-                      <span className="text-sm text-[#b7a6af] font-medium">
-                        Difficulty:
-                      </span>
+                      {/* Priority Badge */}
+                      <div className="flex items-center gap-3 mb-6 flex-wrap">
+                        <span className="text-sm text-[#b7a6af] font-medium">
+                          Difficulty:
+                        </span>
 
-                      <div className="flex gap-2">
-                        <span
-                          className="
+                        <div className="flex gap-2">
+                          <span
+                            className="
                             px-3 py-1
                             rounded-full
                             text-xs
@@ -488,21 +493,21 @@ export default function ShowReport() {
                             bg-green-500/10
                             text-green-300
                           "
-                        >
-                          {dayDifficulty}
-                        </span>
+                          >
+                            {dayDifficulty}
+                          </span>
+                        </div>
                       </div>
-                    </div>
 
-                    <ul className="space-y-4 text-[#d3c1ca]">
-                      {plan.tasks.map((task) => (
-                        <li key={task} className="flex gap-3">
-                          <span className="text-pink-300">✦</span>
-                          {task}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                      <ul className="space-y-4 text-[#d3c1ca]">
+                        {plan.tasks.map((task) => (
+                          <li key={task} className="flex gap-3">
+                            <span className="text-pink-300">✦</span>
+                            {task}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 );
               })}
@@ -545,10 +550,7 @@ export default function ShowReport() {
             </p>
 
             <div className="relative w-52 h-52 mx-auto">
-              <svg
-                className="w-full h-full -rotate-90"
-                viewBox="0 0 120 120"
-              >
+              <svg className="w-full h-full -rotate-90" viewBox="0 0 120 120">
                 <circle
                   cx="60"
                   cy="60"
@@ -577,7 +579,9 @@ export default function ShowReport() {
                 </span>
 
                 <span className="text-sm text-[#a6959d] mt-2">
-                  {(currentReport?.matchScore ?? 0) <= 75 ? "Weak match" : "Strong match" }
+                  {(currentReport?.matchScore ?? 0) <= 75
+                    ? "Weak match"
+                    : "Strong match"}
                 </span>
               </div>
             </div>
@@ -592,16 +596,13 @@ export default function ShowReport() {
               p-7
             "
           >
-            <h3 className="font-bold text-xl mb-5">
-              Missing Skills
-            </h3>
+            <h3 className="font-bold text-xl mb-5">Missing Skills</h3>
 
             <div className="flex flex-wrap gap-3">
-              {currentReport?.missingSkills.map(
-                (skill) => (
-                  <span
-                    key={skill}
-                    className="
+              {currentReport?.missingSkills.map((skill) => (
+                <span
+                  key={skill}
+                  className="
                       px-4 py-2
                       rounded-full
                       border border-pink-500/10
@@ -613,11 +614,10 @@ export default function ShowReport() {
                       transition-all duration-300
                       cursor-pointer
                     "
-                  >
-                    {skill}
-                  </span>
-                )
-              )}
+                >
+                  {skill}
+                </span>
+              ))}
             </div>
           </div>
         </aside>

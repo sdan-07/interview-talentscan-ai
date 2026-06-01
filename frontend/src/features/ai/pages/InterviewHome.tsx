@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { useReport } from "../../../hooks/useReport";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import UserMenu from "../../../components/UserMenu";
 
 export default function InterviewHome() {
@@ -43,9 +43,12 @@ export default function InterviewHome() {
       <header className="sticky top-0 z-40 border-b border-white/5 bg-[#131314]/85 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-12">
           <div>
-            <p className=" font-semibold uppercase tracking-[0.2em] text-pink-300">
-              TalentScan AI <span className="text-4xl">.</span>
-            </p>
+            <Link to="/home">
+              <p className="font-semibold uppercase tracking-[0.2em] text-pink-300 cursor-pointer">
+                TalentScan AI <span className="text-4xl">.</span>
+              </p>
+            </Link>
+            
             {/* <p className="mt-1 text-sm text-[#dfbec9]">
               Resume intelligence workspace
             </p> */}
