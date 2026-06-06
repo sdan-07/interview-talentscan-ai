@@ -45,6 +45,25 @@ Built with a modern full-stack architecture, the platform analyzes resumes, iden
 
 ---
 
+## Run Locally
+
+**To run this project locally**
+
+Navigate to backend directory & install node dependencies
+
+```bash
+cd ./backend/ && npm install
+```
+---
+
+Run the project
+
+```bash
+npm run start
+```
+
+---
+
 ## 📂 Project Structure
 
 ```bash
