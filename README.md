@@ -85,7 +85,9 @@ TalentScan-AI/
 │   ├── middleware/
 │   ├── exceptions/
 │   ├── types/
-│   └── config/
+│   ├── config/
+│   ├── app.ts
+│   └── server.ts
 │
 └── README.md
 ```
