@@ -63,19 +63,48 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
                     flex flex-col items-center justify-center
                     transition-all duration-200 cursor-pointer
                     ${e?`border-pink-400 bg-pink-500/10`:`border-[#a68993] bg-[#201f20] hover:bg-[#2a2a2b]`}
-                  `,children:[(0,P.jsx)(`input`,{type:`file`,accept:`.pdf`,name:`resume`,className:`absolute inset-0 opacity-0 cursor-pointer`,required:!0,onChange:e=>{e.target.files?.[0]&&f(e.target.files[0])}}),(0,P.jsx)(`div`,{className:`text-pink-300 text-6xl mb-4`,children:`☁️`}),(0,P.jsx)(`p`,{className:`font-semibold text-lg`,children:`Click or drag your resume here`}),(0,P.jsx)(`p`,{className:`text-sm text-[#a68993] mt-1`,children:`PDF • Max 3MB`}),n&&(0,P.jsxs)(`div`,{className:`mt-5 px-4 py-2 rounded-xl bg-pink-500/10 border border-pink-400 text-pink-200 text-sm`,children:[`Uploaded: `,n.name]})]})]}),(0,P.jsxs)(`div`,{className:`grid grid-cols-1 md:grid-cols-2 gap-6`,children:[(0,P.jsxs)(`div`,{className:`space-y-3`,children:[(0,P.jsx)(`label`,{htmlFor:`job-desc`,className:`text-sm font-semibold tracking-wide uppercase`,children:`Job Description`}),(0,P.jsx)(`textarea`,{id:`job-desc`,name:`jobDescription`,rows:8,required:!0,onChange:e=>a(e.target.value),placeholder:`Paste the job posting and its requirements here...`,className:`w-full rounded-2xl bg-[#353436] border border-[#584049] p-4 text-white placeholder:text-[#a68993] focus:outline-none focus:ring-2 focus:ring-pink-400`})]}),(0,P.jsxs)(`div`,{className:`space-y-3`,children:[(0,P.jsx)(`label`,{htmlFor:`self-desc`,className:`text-sm font-semibold tracking-wide uppercase`,children:`Self Description`}),(0,P.jsx)(`textarea`,{id:`self-desc`,name:`selfDescription`,rows:8,required:!0,onChange:e=>s(e.target.value),placeholder:`Describe your profile as a summary in breif...`,className:`w-full rounded-2xl bg-[#353436] border border-[#584049] p-4 text-white placeholder:text-[#a68993] focus:outline-none focus:ring-2 focus:ring-pink-400`})]})]}),(0,P.jsx)(`div`,{className:`pt-2`,children:(0,P.jsxs)(`button`,{type:`submit`,disabled:c,className:`w-full md:w-auto px-8 py-4 rounded-2xl bg-pink-600 hover:bg-pink-500 text-white font-semibold shadow-lg transition active:scale-95 cursor-pointer`,children:[c&&(0,P.jsx)(`span`,{className:`inline-block mt-1 mr-1.5 w-4 h-4 border-2 border-white/20 border-t-white rounded-3xl animate-spin`}),c?`Generating...`:(0,P.jsxs)(P.Fragment,{children:[(0,P.jsx)(`span`,{className:`brightness-0 invert`,children:`✨`}),`  Generate my report`]})]})})]})}),(0,P.jsxs)(`div`,{className:`lg:col-span-4 flex flex-col gap-6`,children:[(0,P.jsxs)(`div`,{className:`bg-[#2a2a2b] border border-[#584049] rounded-2xl p-6 flex gap-4`,children:[(0,P.jsx)(`div`,{className:`bg-pink-500/10 h-12 w-12 rounded-xl flex items-center justify-center text-pink-300 text-xl`,children:`⚡`}),(0,P.jsxs)(`div`,{children:[(0,P.jsx)(`h3`,{className:`font-semibold mb-1`,children:`Instant Analysis`}),(0,P.jsx)(`p`,{className:`text-[#dfbec9] text-sm leading-6`,children:`Instantly identify weak areas, missing skills, and optimization opportunities in your resume.`})]})]}),(0,P.jsx)(`div`,{className:`overflow-hidden rounded-2xl border border-[#584049] flex-1 min-h-[320px]`,children:(0,P.jsx)(`img`,{src:`https://lh3.googleusercontent.com/aida-public/AB6AXuDiO7zkAiT0DMcHNxSXToVx0-cvMPO9q6xGE9CKq5F0auTAgwjWZWzIEYs3dtUicX1_fUnEwzHEi3Cx92qbTfEnz5HzNgjfli1u4LcobgnUtVYdCazVErd2cyuEbSwlM05eumJFDjl3OZ1q7ClX36VC3ML22usqoo8hCLHPVLiKgUZqRezFF5XWVZMNOMT6TgMtjhcziXg7_TaAUaHaPXFJjfqt2s_zezI6FOndEGZjLbT6TZW_PYLCeC4LjdxGr5RhBJuylter4l67`,alt:`Tech workspace`,className:`w-full h-full object-cover hover:scale-105 transition duration-500`})}),(0,P.jsxs)(`div`,{className:`bg-[#97406d] text-pink-100 rounded-2xl p-6`,children:[(0,P.jsxs)(`div`,{className:`flex items-center gap-2 mb-2`,children:[(0,P.jsx)(`span`,{children:`✔️`}),(0,P.jsx)(`span`,{className:`font-semibold uppercase text-sm tracking-wide`,children:`Smart Hiring Insights`})]}),(0,P.jsx)(`p`,{className:`text-sm leading-6 opacity-90`,children:`Receive intelligent feedback tailored to improve your chances of landing interviews.`})]})]}),(0,P.jsxs)(`div`,{className:`lg:col-span-12 bg-[#1c1b1c] border border-[#584049] rounded-2xl p-6 md:p-8 shadow-xl mt-15`,children:[(0,P.jsxs)(`div`,{className:`flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between mb-6`,children:[(0,P.jsxs)(`div`,{children:[(0,P.jsx)(`p`,{className:`text-sm font-semibold tracking-wide uppercase text-pink-300`,children:`Generated Reports`}),(0,P.jsx)(`h2`,{className:`text-2xl md:text-3xl font-bold mt-2`,children:`Previous resume matches`})]}),(0,P.jsx)(`p`,{className:`text-sm text-[#dfbec9]`,children:`Review your latest AI-generated role alignment snapshots.`})]}),(0,P.jsx)(`div`,{className:`grid grid-cols-1 ${d?`md:grid-cols-3`:`md:grid-cols-1`} gap-4`,children:!d||d.length===0?(0,P.jsxs)(`div`,{className:`md:col-span-3 border border-dashed border-[#584049] bg-[#2a2a2b]/60 rounded-2xl px-6 py-12 flex flex-col items-center justify-center text-center`,children:[(0,P.jsx)(`h3`,{className:`text-2xl font-semibold italic  text-white mb-5`,children:`No reports yet`}),(0,P.jsx)(`p`,{className:`text-[#dfbec9] text-sm leading-6 max-w-md`,children:`Generate your first resume match report and it will appear here.`})]}):d?.map(e=>(0,P.jsxs)(`div`,{className:`bg-[#2a2a2b] border border-[#584049] rounded-2xl p-5 transition hover:border-pink-400/70 hover:bg-[#302f31] cursor-pointer`,onClick:()=>m(`/report/${e._id}`),children:[(0,P.jsxs)(`div`,{className:`flex items-start justify-between gap-4 mb-5`,children:[(0,P.jsx)(`div`,{className:`bg-pink-500/10 h-11 w-11 rounded-xl flex items-center justify-center text-pink-300 text-lg`,children:`📝`}),(0,P.jsxs)(`div`,{className:`flex gap-3`,children:[(0,P.jsxs)(`div`,{className:`px-3 py-1 rounded-full bg-pink-500/10 border border-pink-400/40 text-pink-200 text-sm font-semibold`,children:[e.matchScore,`%`]}),(0,P.jsx)(`div`,{className:`px-3 py-1 rounded-full bg-pink-500/10 border border-pink-400/40 text-pink-200 text-sm font-semibold`,onClick:t=>{t.stopPropagation(),u(e._id)},children:(0,P.jsxs)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,viewBox:`0 0 24 24`,fill:`none`,stroke:`currentColor`,strokeWidth:`2`,strokeLinecap:`round`,strokeLinejoin:`round`,className:`h-4 w-4`,"aria-hidden":`true`,children:[(0,P.jsx)(`path`,{d:`M3 6h18`}),(0,P.jsx)(`path`,{d:`M8 6V4h8v2`}),(0,P.jsx)(`path`,{d:`M19 6l-1 14H6L5 6`}),(0,P.jsx)(`path`,{d:`M10 11v6`}),(0,P.jsx)(`path`,{d:`M14 11v6`})]})})]})]}),(0,P.jsx)(`h3`,{className:`font-semibold text-lg text-white mb-3`,children:e.title}),(0,P.jsx)(`div`,{className:`flex items-center justify-between gap-4 border-t border-[#584049] pt-4`,children:(0,P.jsx)(`span`,{className:`text-sm text-[#dfbec9] text-right`,children:new Date(e.createdAt).toLocaleDateString(`en-us`,{month:`short`,day:`numeric`,year:`numeric`})})})]},e._id))})]})]})})]})}var mo=()=>(0,P.jsxs)(`div`,{className:`min-h-screen text-2xl flex flex-col justify-center items-center`,children:[(0,P.jsx)(`h1`,{className:`mb-6`,children:`404`}),(0,P.jsx)(`h2`,{children:`Page Not Found !`})]});function ho(){let[e,t]=(0,S.useState)(`technical`),[n,r]=(0,S.useState)(0),{report:i,reportNotFound:a}=U(),o=i?.at(-1)??null,s=(e=`low`)=>e.charAt(0).toUpperCase()+e.slice(1);if((0,S.useEffect)(()=>{window.scrollTo({top:0,left:0,behavior:`instant`})},[]),a)return(0,P.jsx)(mo,{});let c=t=>t.map((t,i)=>(0,P.jsxs)(`div`,{className:`
+                  `,children:[(0,P.jsx)(`input`,{type:`file`,accept:`.pdf`,name:`resume`,className:`absolute inset-0 opacity-0 cursor-pointer`,required:!0,onChange:e=>{e.target.files?.[0]&&f(e.target.files[0])}}),(0,P.jsx)(`div`,{className:`text-pink-300 text-6xl mb-4`,children:`☁️`}),(0,P.jsx)(`p`,{className:`font-semibold text-lg`,children:`Click or drag your resume here`}),(0,P.jsx)(`p`,{className:`text-sm text-[#a68993] mt-1`,children:`PDF • Max 3MB`}),n&&(0,P.jsxs)(`div`,{className:`mt-5 px-4 py-2 rounded-xl bg-pink-500/10 border border-pink-400 text-pink-200 text-sm`,children:[`Uploaded: `,n.name]})]})]}),(0,P.jsxs)(`div`,{className:`grid grid-cols-1 md:grid-cols-2 gap-6`,children:[(0,P.jsxs)(`div`,{className:`space-y-3`,children:[(0,P.jsx)(`label`,{htmlFor:`job-desc`,className:`text-sm font-semibold tracking-wide uppercase`,children:`Job Description`}),(0,P.jsx)(`textarea`,{id:`job-desc`,name:`jobDescription`,rows:8,required:!0,onChange:e=>a(e.target.value),placeholder:`Paste the job posting and its requirements here...`,className:`w-full rounded-2xl bg-[#353436] border border-[#584049] p-4 text-white placeholder:text-[#a68993] focus:outline-none focus:ring-2 focus:ring-pink-400`})]}),(0,P.jsxs)(`div`,{className:`space-y-3`,children:[(0,P.jsx)(`label`,{htmlFor:`self-desc`,className:`text-sm font-semibold tracking-wide uppercase`,children:`Self Description`}),(0,P.jsx)(`textarea`,{id:`self-desc`,name:`selfDescription`,rows:8,required:!0,onChange:e=>s(e.target.value),placeholder:`Describe your profile as a summary in breif...`,className:`w-full rounded-2xl bg-[#353436] border border-[#584049] p-4 text-white placeholder:text-[#a68993] focus:outline-none focus:ring-2 focus:ring-pink-400`})]})]}),(0,P.jsx)(`div`,{className:`pt-2`,children:(0,P.jsxs)(`button`,{type:`submit`,disabled:c,className:`w-full md:w-auto px-8 py-4 rounded-2xl bg-pink-600 hover:bg-pink-500 text-white font-semibold shadow-lg transition active:scale-95 cursor-pointer`,children:[c&&(0,P.jsx)(`span`,{className:`inline-block mt-1 mr-1.5 w-4 h-4 border-2 border-white/20 border-t-white rounded-3xl animate-spin`}),c?`Generating...`:(0,P.jsxs)(P.Fragment,{children:[(0,P.jsx)(`span`,{className:`brightness-0 invert`,children:`✨`}),`  Generate my report`]})]})})]})}),(0,P.jsxs)(`div`,{className:`lg:col-span-4 flex flex-col gap-6`,children:[(0,P.jsxs)(`div`,{className:`bg-[#2a2a2b] border border-[#584049] rounded-2xl p-6 flex gap-4`,children:[(0,P.jsx)(`div`,{className:`bg-pink-500/10 h-12 w-12 rounded-xl flex items-center justify-center text-pink-300 text-xl`,children:`⚡`}),(0,P.jsxs)(`div`,{children:[(0,P.jsx)(`h3`,{className:`font-semibold mb-1`,children:`Instant Analysis`}),(0,P.jsx)(`p`,{className:`text-[#dfbec9] text-sm leading-6`,children:`Instantly identify weak areas, missing skills, and optimization opportunities in your resume.`})]})]}),(0,P.jsx)(`div`,{className:`overflow-hidden rounded-2xl border border-[#584049] flex-1 min-h-[320px]`,children:(0,P.jsx)(`img`,{src:`https://lh3.googleusercontent.com/aida-public/AB6AXuDiO7zkAiT0DMcHNxSXToVx0-cvMPO9q6xGE9CKq5F0auTAgwjWZWzIEYs3dtUicX1_fUnEwzHEi3Cx92qbTfEnz5HzNgjfli1u4LcobgnUtVYdCazVErd2cyuEbSwlM05eumJFDjl3OZ1q7ClX36VC3ML22usqoo8hCLHPVLiKgUZqRezFF5XWVZMNOMT6TgMtjhcziXg7_TaAUaHaPXFJjfqt2s_zezI6FOndEGZjLbT6TZW_PYLCeC4LjdxGr5RhBJuylter4l67`,alt:`Tech workspace`,className:`w-full h-full object-cover hover:scale-105 transition duration-500`})}),(0,P.jsxs)(`div`,{className:`bg-[#97406d] text-pink-100 rounded-2xl p-6`,children:[(0,P.jsxs)(`div`,{className:`flex items-center gap-2 mb-2`,children:[(0,P.jsx)(`span`,{children:`✔️`}),(0,P.jsx)(`span`,{className:`font-semibold uppercase text-sm tracking-wide`,children:`Smart Hiring Insights`})]}),(0,P.jsx)(`p`,{className:`text-sm leading-6 opacity-90`,children:`Receive intelligent feedback tailored to improve your chances of landing interviews.`})]})]}),(0,P.jsxs)(`div`,{className:`lg:col-span-12 bg-[#1c1b1c] border border-[#584049] rounded-2xl p-6 md:p-8 shadow-xl mt-15`,children:[(0,P.jsxs)(`div`,{className:`flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between mb-6`,children:[(0,P.jsxs)(`div`,{children:[(0,P.jsx)(`p`,{className:`text-sm font-semibold tracking-wide uppercase text-pink-300`,children:`Generated Reports`}),(0,P.jsx)(`h2`,{className:`text-2xl md:text-3xl font-bold mt-2`,children:`Previous resume matches`})]}),(0,P.jsx)(`p`,{className:`text-sm text-[#dfbec9]`,children:`Review your latest AI-generated role alignment snapshots.`})]}),(0,P.jsx)(`div`,{className:`grid grid-cols-1 ${d?`md:grid-cols-3`:`md:grid-cols-1`} gap-4`,children:!d||d.length===0?(0,P.jsxs)(`div`,{className:`md:col-span-3 border border-dashed border-[#584049] bg-[#2a2a2b]/60 rounded-2xl px-6 py-12 flex flex-col items-center justify-center text-center`,children:[(0,P.jsx)(`h3`,{className:`text-2xl font-semibold italic  text-white mb-5`,children:`No reports yet`}),(0,P.jsx)(`p`,{className:`text-[#dfbec9] text-sm leading-6 max-w-md`,children:`Generate your first resume match report and it will appear here.`})]}):d?.map(e=>(0,P.jsxs)(`div`,{className:`bg-[#2a2a2b] border border-[#584049] rounded-2xl p-5 transition hover:border-pink-400/70 hover:bg-[#302f31] cursor-pointer`,onClick:()=>m(`/report/${e._id}`),children:[(0,P.jsxs)(`div`,{className:`flex items-start justify-between gap-4 mb-5`,children:[(0,P.jsx)(`div`,{className:`bg-pink-500/10 h-11 w-11 rounded-xl flex items-center justify-center text-pink-300 text-lg`,children:`📝`}),(0,P.jsxs)(`div`,{className:`flex gap-3`,children:[(0,P.jsxs)(`div`,{className:`px-3 py-1 rounded-full bg-pink-500/10 border border-pink-400/40 text-pink-200 text-sm font-semibold`,children:[e.matchScore,`%`]}),(0,P.jsx)(`div`,{className:`px-3 py-1 rounded-full bg-pink-500/10 border border-pink-400/40 text-pink-200 text-sm font-semibold`,onClick:t=>{t.stopPropagation(),u(e._id)},children:(0,P.jsxs)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,viewBox:`0 0 24 24`,fill:`none`,stroke:`currentColor`,strokeWidth:`2`,strokeLinecap:`round`,strokeLinejoin:`round`,className:`h-4 w-4`,"aria-hidden":`true`,children:[(0,P.jsx)(`path`,{d:`M3 6h18`}),(0,P.jsx)(`path`,{d:`M8 6V4h8v2`}),(0,P.jsx)(`path`,{d:`M19 6l-1 14H6L5 6`}),(0,P.jsx)(`path`,{d:`M10 11v6`}),(0,P.jsx)(`path`,{d:`M14 11v6`})]})})]})]}),(0,P.jsx)(`h3`,{className:`font-semibold text-lg text-white mb-3`,children:e.title}),(0,P.jsx)(`div`,{className:`flex items-center justify-between gap-4 border-t border-[#584049] pt-4`,children:(0,P.jsx)(`span`,{className:`text-sm text-[#dfbec9] text-right`,children:new Date(e.createdAt).toLocaleDateString(`en-us`,{month:`short`,day:`numeric`,year:`numeric`})})})]},e._id))})]})]})})]})}var mo=()=>(0,P.jsxs)(`div`,{className:`min-h-screen text-2xl flex flex-col justify-center items-center`,children:[(0,P.jsx)(`h1`,{className:`mb-6`,children:`404`}),(0,P.jsx)(`h2`,{children:`Page Not Found !`})]});function ho(){let[e,t]=(0,S.useState)(`technical`),[n,r]=(0,S.useState)(0),{report:i,reportNotFound:a}=U(),o=i?.at(-1)??null,s=[`technical`,`behavioral`,`roadmap`],c=(e=`low`)=>e.charAt(0).toUpperCase()+e.slice(1);if((0,S.useEffect)(()=>{window.scrollTo({top:0,left:0,behavior:`instant`})},[]),a)return(0,P.jsx)(mo,{});let l=()=>(0,P.jsxs)(P.Fragment,{children:[(0,P.jsxs)(`div`,{className:`
+          bg-[#1b1b1d]/90
+          border border-white/5
+          rounded-2xl
+          p-5 sm:p-6 xl:p-7
+        `,children:[(0,P.jsx)(`p`,{className:`
+            uppercase
+            tracking-[0.25em]
+            text-[11px] sm:text-xs
+            text-[#a6959d]
+            mb-5 sm:mb-6
+          `,children:`Overall Match`}),(0,P.jsxs)(`div`,{className:`relative mx-auto h-36 w-36 sm:h-44 sm:w-44 xl:h-52 xl:w-52`,children:[(0,P.jsxs)(`svg`,{className:`h-full w-full -rotate-90`,viewBox:`0 0 120 120`,children:[(0,P.jsx)(`circle`,{cx:`60`,cy:`60`,r:`54`,strokeWidth:`8`,fill:`none`,className:`stroke-[#2d2d31]`}),(0,P.jsx)(`circle`,{cx:`60`,cy:`60`,r:`54`,strokeWidth:`8`,fill:`none`,strokeLinecap:`round`,strokeDasharray:`339.29`,strokeDashoffset:`23`,className:`stroke-pink-500`})]}),(0,P.jsxs)(`div`,{className:`absolute inset-0 flex flex-col items-center justify-center`,children:[(0,P.jsxs)(`span`,{className:`text-3xl font-black text-pink-300 sm:text-4xl xl:text-5xl`,children:[o?.matchScore??0,`%`]}),(0,P.jsx)(`span`,{className:`mt-2 text-xs text-[#a6959d] sm:text-sm`,children:(o?.matchScore??0)<=75?`Weak match`:`Strong match`})]})]})]}),(0,P.jsxs)(`div`,{className:`
+          bg-[#1b1b1d]/90
+          border border-white/5
+          rounded-2xl
+          p-5 sm:p-6 xl:p-7
+        `,children:[(0,P.jsx)(`h3`,{className:`mb-4 text-lg font-bold sm:mb-5 sm:text-xl`,children:`Missing Skills`}),(0,P.jsx)(`div`,{className:`flex flex-wrap gap-2 sm:gap-3`,children:o?.missingSkills.map(e=>(0,P.jsx)(`span`,{className:`
+                max-w-full
+                break-words
+                rounded-full
+                border border-pink-500/10
+                bg-pink-500/[0.03]
+                px-3 py-2
+                text-xs
+                text-pink-100
+                transition-all duration-300
+                hover:border-pink-500/30
+                hover:bg-pink-500/10
+                sm:px-4 sm:text-sm
+              `,children:e},e))})]})]}),u=t=>t.map((t,i)=>(0,P.jsxs)(`div`,{className:`
           group
           bg-[#1b1b1d]/80
           backdrop-blur-xl
           border border-[#584049]
-          rounded-3xl
+          rounded-2xl
           overflow-hidden
           transition-all duration-300
           hover:border-pink-500/40
           hover:shadow-[0_0_35px_rgba(236,72,153,0.10)]
         `,children:[(0,P.jsxs)(`button`,{onClick:()=>r(n===i?null:i),className:`
             w-full
-            p-7
+            p-4 sm:p-5 lg:p-7
             text-left
             flex items-start justify-between gap-4
             transition-all duration-300
@@ -86,18 +115,19 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
                 px-3 py-1
                 rounded-full
                 text-[11px]
-                uppercase tracking-[0.2em]
+                uppercase tracking-[0.16em] sm:tracking-[0.2em]
                 bg-pink-500/10
                 border border-pink-500/20
                 text-pink-300
-                mb-4
+                mb-3 sm:mb-4
               `,children:t.category??e}),(0,P.jsx)(`h3`,{className:`
                 text-white
-                text-xl
+                text-base sm:text-lg lg:text-xl
                 font-semibold
-                leading-relaxed
+                leading-7 sm:leading-relaxed
                 group-hover:text-pink-100
                 transition-colors
+                break-words
               `,children:t.question})]}),(0,P.jsx)(`div`,{className:`
               mt-1 text-pink-300 text-xl
               transition-transform duration-300
@@ -105,13 +135,13 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
             `,children:`▼`})]}),(0,P.jsx)(`div`,{className:`
             grid overflow-hidden transition-all duration-500 ease-in-out
             ${n===i?`grid-rows-[1fr] opacity-100`:`grid-rows-[0fr] opacity-0`}
-          `,children:(0,P.jsx)(`div`,{className:`overflow-hidden`,children:(0,P.jsxs)(`div`,{className:`px-7 pb-7 space-y-5`,children:[(0,P.jsxs)(`div`,{className:`
+          `,children:(0,P.jsx)(`div`,{className:`overflow-hidden`,children:(0,P.jsxs)(`div`,{className:`space-y-4 px-4 pb-4 sm:px-5 sm:pb-5 lg:space-y-5 lg:px-7 lg:pb-7`,children:[(0,P.jsxs)(`div`,{className:`
                   bg-gradient-to-br
                   from-[#2a2a2d]
                   to-[#232326]
                   border border-white/5
-                  rounded-2xl
-                  p-5
+                  rounded-xl sm:rounded-2xl
+                  p-4 sm:p-5
                 `,children:[(0,P.jsx)(`p`,{className:`
                     text-pink-300
                     text-xs
@@ -119,13 +149,13 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
                     tracking-[0.2em]
                     mb-3
                     font-bold
-                  `,children:`Intention`}),(0,P.jsx)(`p`,{className:`text-[#d8c7cf] leading-7 text-[15px]`,children:t.intention})]}),(0,P.jsxs)(`div`,{className:`
+                  `,children:`Intention`}),(0,P.jsx)(`p`,{className:`break-words text-sm leading-6 text-[#d8c7cf] sm:text-[15px] sm:leading-7`,children:t.intention})]}),(0,P.jsxs)(`div`,{className:`
                   relative
                   overflow-hidden
-                  rounded-2xl
+                  rounded-xl sm:rounded-2xl
                   border border-pink-500/10
                   bg-pink-500/[0.03]
-                  p-5
+                  p-4 sm:p-5
                 `,children:[(0,P.jsx)(`div`,{className:`
                     absolute left-0 top-0
                     h-full w-1
@@ -141,46 +171,48 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
                     text-pink-200
                   `,children:`Model Answer`}),(0,P.jsxs)(`p`,{className:`
                     italic
+                    break-words
                     text-[#dfbec9]
-                    leading-8
-                    text-[15px]
+                    leading-7
+                    text-sm sm:text-[15px] sm:leading-8
                   `,children:[`"`,t.answer,`"`]})]})]})})})]},i));return(0,P.jsxs)(`main`,{className:`
         min-h-screen
         bg-[#131314]
         text-[#e5e2e3]
         font-sans
-        overflow-hidden
-        px-32
-      `,children:[(0,P.jsx)(`header`,{className:`sticky top-0 z-40 border-b border-white/5 bg-[#131314]/85 backdrop-blur-xl`,children:(0,P.jsxs)(`div`,{className:`flex max-w-[1700px] items-center justify-between py-4`,children:[(0,P.jsx)(Mn,{to:`/home`,children:(0,P.jsxs)(`p`,{className:`font-semibold uppercase tracking-[0.2em] text-pink-300 cursor-pointer`,children:[`TalentScan AI `,(0,P.jsx)(`span`,{className:`text-4xl`,children:`.`})]})}),(0,P.jsx)(fo,{})]})}),(0,P.jsx)(`div`,{className:`
+        overflow-x-hidden
+        px-4 sm:px-6 lg:px-8 2xl:px-12
+      `,children:[(0,P.jsx)(`header`,{className:`sticky top-0 z-40 border-b border-white/5 bg-[#131314]/85 backdrop-blur-xl`,children:(0,P.jsxs)(`div`,{className:`mx-auto flex max-w-[1700px] items-center justify-between py-3 sm:py-4`,children:[(0,P.jsx)(Mn,{to:`/home`,children:(0,P.jsxs)(`p`,{className:`cursor-pointer text-sm font-semibold uppercase tracking-[0.16em] text-pink-300 sm:text-base sm:tracking-[0.2em]`,children:[`TalentScan AI `,(0,P.jsx)(`span`,{className:`text-3xl sm:text-4xl`,children:`.`})]})}),(0,P.jsx)(fo,{})]})}),(0,P.jsx)(`div`,{className:`
           fixed top-[-200px] left-[-100px]
-          w-[500px] h-[500px]
+          w-[260px] h-[260px] sm:w-[500px] sm:h-[500px]
           bg-pink-500/10
           blur-[140px]
           rounded-full
           pointer-events-none
         `}),(0,P.jsx)(`div`,{className:`
           fixed bottom-[-200px] right-[-100px]
-          w-[500px] h-[500px]
+          w-[260px] h-[260px] sm:w-[500px] sm:h-[500px]
           bg-fuchsia-500/10
           blur-[140px]
           rounded-full
           pointer-events-none
-        `}),(0,P.jsxs)(`div`,{className:`flex max-w-[1700px] mx-auto relative z-10`,children:[(0,P.jsx)(`aside`,{className:`
+        `}),(0,P.jsxs)(`div`,{className:`relative z-10 mx-auto flex max-w-[1700px]`,children:[(0,P.jsx)(`aside`,{className:`
             hidden md:flex
             flex-col
-            w-72
+            w-56 lg:w-64 2xl:w-72
+            shrink-0
             border-r border-white/5
-            p-6
+            p-4 lg:p-6
             gap-3
-            sticky top-0
-            h-screen
+            sticky top-[61px] sm:top-[73px]
+            h-[calc(100vh-61px)] sm:h-[calc(100vh-73px)]
             backdrop-blur-xl
             bg-black/10
-            mt-15
-          `,children:[`technical`,`behavioral`,`roadmap`].map(n=>(0,P.jsx)(`button`,{onClick:()=>{t(n),r(null)},className:`
+            overflow-y-auto
+          `,children:s.map(n=>(0,P.jsx)(`button`,{onClick:()=>{t(n),r(null)},className:`
                 text-left
-                px-5 py-4
-                rounded-2xl
+                px-4 py-3 lg:px-5 lg:py-4
+                rounded-xl lg:rounded-2xl
                 capitalize
                 transition-all duration-300
                 cursor-pointer
@@ -188,24 +220,27 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
                 ${e===n?`bg-pink-500/10 border-pink-500/20 text-pink-300 shadow-[0_0_20px_rgba(236,72,153,0.08)]`:`border-transparent text-[#c6b6bf] hover:bg-white/[0.03]`}
               `,children:n},n))}),(0,P.jsxs)(`section`,{className:`
             flex-1
-            px-6 md:px-10
-            py-10 md:py-14
-          `,children:[(0,P.jsxs)(`div`,{className:`mb-14`,children:[(0,P.jsx)(`div`,{className:`
+            min-w-0
+            px-0 md:px-6 lg:px-8 xl:px-10
+            py-8 sm:py-10 md:py-12 lg:py-14
+          `,children:[(0,P.jsxs)(`div`,{className:`mb-8 sm:mb-10 lg:mb-14`,children:[(0,P.jsx)(`div`,{className:`
                 inline-flex items-center
                 gap-2
-                px-4 py-2
+                px-3 py-2 sm:px-4
                 rounded-full
                 border border-pink-500/20
                 bg-pink-500/5
                 text-pink-300
-                text-sm
-                mb-6
+                text-xs sm:text-sm
+                mb-5 sm:mb-6
+                max-w-full
               `,children:`✦ AI Interview Analysis Completed`}),(0,P.jsxs)(`h2`,{className:`
-                text-5xl md:text-6xl
+                text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl
                 font-black
                 tracking-tight
                 leading-tight
                 max-w-4xl
+                break-words
               `,children:[(o?.matchScore??0)<=77?`Uh-oh! Your Profile Requires`:`Excellent! Your Profile shows`,` `,(0,P.jsx)(`br`,{}),` `,(0,P.jsx)(`span`,{className:`
                   bg-gradient-to-r
                   from-pink-300
@@ -214,25 +249,34 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
                   text-transparent
                 `,children:(o?.matchScore??0)<=77?`Better Alignment`:`High Match Score`})]}),(0,P.jsx)(`p`,{className:`
                 text-[#b7a6af]
-                text-lg
-                mt-6
-                leading-8
+                text-base sm:text-lg
+                mt-5 sm:mt-6
+                leading-7 sm:leading-8
                 max-w-3xl
-              `,children:`We benchmarked your profile against Lead Architect-level requirements and generated optimized preparation insights.`})]}),e===`technical`&&(0,P.jsx)(`div`,{className:`space-y-6`,children:c(o?.technicalQuestions||[])}),e===`behavioral`&&(0,P.jsx)(`div`,{className:`space-y-6`,children:c(o?.behavioralQuestions||[])}),e===`roadmap`&&(0,P.jsxs)(`div`,{className:`space-y-10`,children:[(0,P.jsxs)(`div`,{className:`flex items-center justify-between flex-wrap gap-4`,children:[(0,P.jsxs)(`h2`,{className:`text-4xl font-bold text-white`,children:[o?.preparationPlan?.length,`-Day Preparation Roadmap`]}),(0,P.jsx)(`div`,{className:`
+              `,children:`We benchmarked your profile against Lead Architect-level requirements and generated optimized preparation insights.`})]}),(0,P.jsx)(`div`,{className:`mb-6 flex gap-2 overflow-x-auto pb-2 md:hidden`,children:s.map(n=>(0,P.jsx)(`button`,{onClick:()=>{t(n),r(null)},className:`
+                  shrink-0
+                  rounded-full
+                  border
+                  px-4 py-2
+                  text-sm
+                  capitalize
+                  transition-all duration-300
+                  ${e===n?`bg-pink-500/10 border-pink-500/20 text-pink-300`:`border-white/10 text-[#c6b6bf] hover:bg-white/[0.03]`}
+                `,children:n},n))}),(0,P.jsx)(`div`,{className:`mb-8 grid gap-4 sm:grid-cols-2 xl:hidden`,children:l()}),e===`technical`&&(0,P.jsx)(`div`,{className:`space-y-4 sm:space-y-6`,children:u(o?.technicalQuestions||[])}),e===`behavioral`&&(0,P.jsx)(`div`,{className:`space-y-4 sm:space-y-6`,children:u(o?.behavioralQuestions||[])}),e===`roadmap`&&(0,P.jsxs)(`div`,{className:`space-y-7 sm:space-y-10`,children:[(0,P.jsxs)(`div`,{className:`flex items-center justify-between flex-wrap gap-4`,children:[(0,P.jsxs)(`h2`,{className:`text-2xl font-bold text-white sm:text-3xl lg:text-4xl`,children:[o?.preparationPlan?.length,`-Day Preparation Roadmap`]}),(0,P.jsx)(`div`,{className:`
                     px-4 py-2
                     rounded-full
                     bg-pink-500/10
                     border border-pink-500/20
                     text-pink-300
-                    text-sm
-                  `,children:`Priority Focus Areas`})]}),(o?.preparationPlan||[]).map((e,t)=>{let n=o?.skillGaps?.[t],r=s(n?.severity);return(0,P.jsxs)(`div`,{className:`flex gap-6`,children:[(0,P.jsxs)(`div`,{className:`flex flex-col items-center`,children:[(0,P.jsx)(`div`,{className:`
-                        w-11 h-11
-                        rounded-2xl
+                    text-xs sm:text-sm
+                  `,children:`Priority Focus Areas`})]}),(o?.preparationPlan||[]).map((e,t)=>{let n=o?.skillGaps?.[t],r=c(n?.severity);return(0,P.jsxs)(`div`,{className:`flex gap-3 sm:gap-5 lg:gap-6`,children:[(0,P.jsxs)(`div`,{className:`flex shrink-0 flex-col items-center`,children:[(0,P.jsx)(`div`,{className:`
+                        w-9 h-9 sm:w-11 sm:h-11
+                        rounded-xl sm:rounded-2xl
                         bg-gradient-to-br
                         from-pink-500
                         to-fuchsia-600
                         flex items-center justify-center
-                        font-bold
+                        text-sm font-bold sm:text-base
                         shadow-lg shadow-pink-500/20
                       `,children:e.day}),e.day!==3&&(0,P.jsx)(`div`,{className:`
                           w-[2px]
@@ -246,17 +290,18 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
                       bg-[#1b1b1d]/80
                       backdrop-blur-xl
                       border border-white/5
-                      rounded-3xl
-                      p-7
+                      rounded-2xl
+                      p-4 sm:p-5 lg:p-7
                       hover:border-pink-500/20
                       transition-all duration-300
-                    `,children:[(0,P.jsxs)(`h3`,{className:`text-2xl font-bold mb-5`,children:[`Day `,e.day,`: Preparation Focus`]}),(0,P.jsx)(`div`,{className:`
+                      min-w-0
+                    `,children:[(0,P.jsxs)(`h3`,{className:`mb-4 break-words text-xl font-bold sm:mb-5 sm:text-2xl`,children:[`Day `,e.day,`: Preparation Focus`]}),(0,P.jsx)(`div`,{className:`
                         bg-red-500/10
                         border border-red-400/20
-                        rounded-2xl
-                        p-5
+                        rounded-xl sm:rounded-2xl
+                        p-4 sm:p-5
                         mb-5
-                      `,children:(0,P.jsxs)(`p`,{className:`text-red-300 leading-7`,children:[(0,P.jsx)(`span`,{className:`font-bold`,children:`Urgent Skill Gap:`}),` `,(o?.skillGaps||[]).map(e=>e.skill).join(` / `)||`No urgent gaps found`]})}),(0,P.jsxs)(`div`,{className:`flex items-center gap-3 mb-6 flex-wrap`,children:[(0,P.jsx)(`span`,{className:`text-sm text-[#b7a6af] font-medium`,children:`Difficulty:`}),(0,P.jsx)(`div`,{className:`flex gap-2`,children:(0,P.jsx)(`span`,{className:`
+                      `,children:(0,P.jsxs)(`p`,{className:`break-words text-sm leading-6 text-red-300 sm:text-base sm:leading-7`,children:[(0,P.jsx)(`span`,{className:`font-bold`,children:`Urgent Skill Gap:`}),` `,(o?.skillGaps||[]).map(e=>e.skill).join(` / `)||`No urgent gaps found`]})}),(0,P.jsxs)(`div`,{className:`flex items-center gap-3 mb-6 flex-wrap`,children:[(0,P.jsx)(`span`,{className:`text-sm text-[#b7a6af] font-medium`,children:`Difficulty:`}),(0,P.jsx)(`div`,{className:`flex gap-2`,children:(0,P.jsx)(`span`,{className:`
                             px-3 py-1
                             rounded-full
                             text-xs
@@ -265,40 +310,17 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
                             border-green-500/20
                             bg-green-500/10
                             text-green-300
-                          `,children:r})})]}),(0,P.jsx)(`ul`,{className:`space-y-4 text-[#d3c1ca]`,children:e.tasks.map(e=>(0,P.jsxs)(`li`,{className:`flex gap-3`,children:[(0,P.jsx)(`span`,{className:`text-pink-300`,children:`✦`}),e]},e))})]})]},e.day)})]})]}),(0,P.jsxs)(`aside`,{className:`
+                          `,children:r})})]}),(0,P.jsx)(`ul`,{className:`space-y-3 text-sm text-[#d3c1ca] sm:space-y-4 sm:text-base`,children:e.tasks.map(e=>(0,P.jsxs)(`li`,{className:`flex gap-3`,children:[(0,P.jsx)(`span`,{className:`shrink-0 text-pink-300`,children:`✦`}),(0,P.jsx)(`span`,{className:`min-w-0 break-words`,children:e})]},e))})]})]},e.day)})]})]}),(0,P.jsx)(`aside`,{className:`
             hidden xl:flex
             flex-col
-            w-80
-            p-6
+            w-72 2xl:w-80
+            shrink-0
+            gap-6
+            p-4 2xl:p-6
             border-l border-white/5
             backdrop-blur-xl
             bg-black/10
-          `,children:[(0,P.jsxs)(`div`,{className:`
-              bg-[#1b1b1d]/90
-              border border-white/5
-              rounded-3xl
-              p-7
-              mb-6
-            `,children:[(0,P.jsx)(`p`,{className:`
-                uppercase
-                tracking-[0.3em]
-                text-xs
-                text-[#a6959d]
-                mb-6
-              `,children:`Overall Match`}),(0,P.jsxs)(`div`,{className:`relative w-52 h-52 mx-auto`,children:[(0,P.jsxs)(`svg`,{className:`w-full h-full -rotate-90`,viewBox:`0 0 120 120`,children:[(0,P.jsx)(`circle`,{cx:`60`,cy:`60`,r:`54`,strokeWidth:`8`,fill:`none`,className:`stroke-[#2d2d31]`}),(0,P.jsx)(`circle`,{cx:`60`,cy:`60`,r:`54`,strokeWidth:`8`,fill:`none`,strokeLinecap:`round`,strokeDasharray:`339.29`,strokeDashoffset:`23`,className:`stroke-pink-500`})]}),(0,P.jsxs)(`div`,{className:`absolute inset-0 flex flex-col items-center justify-center`,children:[(0,P.jsxs)(`span`,{className:`text-5xl font-black text-pink-300`,children:[o?.matchScore,`%`]}),(0,P.jsx)(`span`,{className:`text-sm text-[#a6959d] mt-2`,children:(o?.matchScore??0)<=75?`Weak match`:`Strong match`})]})]})]}),(0,P.jsxs)(`div`,{className:`
-              bg-[#1b1b1d]/90
-              border border-white/5
-              rounded-3xl
-              p-7
-            `,children:[(0,P.jsx)(`h3`,{className:`font-bold text-xl mb-5`,children:`Missing Skills`}),(0,P.jsx)(`div`,{className:`flex flex-wrap gap-3`,children:o?.missingSkills.map(e=>(0,P.jsx)(`span`,{className:`
-                      px-4 py-2
-                      rounded-full
-                      border border-pink-500/10
-                      bg-pink-500/[0.03]
-                      text-sm
-                      text-pink-100
-                      hover:border-pink-500/30
-                      hover:bg-pink-500/10
-                      transition-all duration-300
-                      cursor-pointer
-                    `,children:e},e))})]})]})]})]})}(0,_.createRoot)(document.getElementById(`root`)).render((0,P.jsx)(kn,{children:(0,P.jsx)(Qn,{children:(0,P.jsx)(H,{children:(0,P.jsx)(()=>(0,P.jsx)(`main`,{className:`min-h-screen `,children:(0,P.jsxs)(Vt,{children:[(0,P.jsx)(zt,{path:`/`,element:(0,P.jsx)(ro,{})}),(0,P.jsx)(zt,{path:`/register`,element:(0,P.jsx)(io,{})}),(0,P.jsx)(zt,{path:`*`,element:(0,P.jsx)(mo,{})}),(0,P.jsxs)(zt,{element:(0,P.jsx)(ao,{}),children:[(0,P.jsx)(zt,{path:`/home`,element:(0,P.jsx)(po,{})}),(0,P.jsx)(zt,{path:`/report/:id`,element:(0,P.jsx)(ho,{})})]})]})}),{})})})}));
+            sticky top-[73px]
+            h-[calc(100vh-73px)]
+            overflow-y-auto
+          `,children:l()})]})]})}(0,_.createRoot)(document.getElementById(`root`)).render((0,P.jsx)(kn,{children:(0,P.jsx)(Qn,{children:(0,P.jsx)(H,{children:(0,P.jsx)(()=>(0,P.jsx)(`main`,{className:`min-h-screen `,children:(0,P.jsxs)(Vt,{children:[(0,P.jsx)(zt,{path:`/`,element:(0,P.jsx)(ro,{})}),(0,P.jsx)(zt,{path:`/register`,element:(0,P.jsx)(io,{})}),(0,P.jsx)(zt,{path:`*`,element:(0,P.jsx)(mo,{})}),(0,P.jsxs)(zt,{element:(0,P.jsx)(ao,{}),children:[(0,P.jsx)(zt,{path:`/home`,element:(0,P.jsx)(po,{})}),(0,P.jsx)(zt,{path:`/report/:id`,element:(0,P.jsx)(ho,{})})]})]})}),{})})})}));
