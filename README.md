@@ -15,7 +15,8 @@ Built with a modern full-stack architecture, the platform analyzes resumes, iden
 - 🌙 Modern Responsive UI
 - ⚡ Fast & Interactive Experience
 - 🔐 Authentication System
-- 📄 Dynamic Report Generation
+
+<!-- - 📄 Dynamic Report Generation -->
 
 ---
 
@@ -70,25 +71,26 @@ npm run start
 TalentScan-AI/
 │
 ├── frontend/
-│   ├── features/
-│   ├── context/
-│   ├── hooks/
-│   ├── styles/
-│   ├── services/
-│   └── types/
+│   ├── features/       # Feature-based modules (resume upload, report view, etc.)
+│   ├── context/         # Global state via React Context API
+│   ├── hooks/            # Custom React hooks
+│   ├── styles/            # Tailwind/global CSS styles
+│   ├── services/         # API calls to backend
+│   └── types/              # TypeScript type definitions
 │
 ├── backend/
-│   ├── controllers/
-│   ├── services/
-│   ├── routes/
-│   ├── models/
-│   ├── middleware/
-│   ├── exceptions/
-│   ├── types/
-│   ├── config/
-│   ├── app.ts
-│   └── server.ts
+│   ├── controllers/    # Request handlers / business logic entry points
+│   ├── services/         # Core logic (Gemini API calls, report generation)
+│   ├── routes/            # Express route definitions
+│   ├── models/           # Mongoose schemas
+│   ├── middleware/    # Auth, error handling, validation
+│   ├── exceptions/    # Custom error classes
+│   ├── types/              # TypeScript type definitions
+│   ├── config/            # Env/config setup
+│   ├── app.ts              # Express app setup
+│   └── server.ts          # Server entry point
 │
+└── README.md
 └── README.md
 ```
 
