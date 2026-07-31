@@ -91,7 +91,6 @@ TalentScan-AI/
 │   └── server.ts          # Server entry point
 │
 └── README.md
-└── README.md
 ```
 
 ---
