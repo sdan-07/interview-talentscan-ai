@@ -1,26 +1,25 @@
-# TalentScan AI 🚀
+# TalentScan AI
 
-**TalentScan AI** is an AI-powered resume analysis platform that helps users evaluate, optimize, and improve their resumes using intelligent match scoring and recruiter-focused insights.
+TalentScan AI is an AI-powered resume analysis platform that helps users evaluate, optimize, and improve their resumes using intelligent match scoring and recruiter-focused insights.
 
 Built with a modern full-stack architecture, the platform analyzes resumes, identifies strengths and weaknesses, and provides actionable recommendations to increase interview chances and ATS compatibility.
 
 ---
 
-## ✨ Features
+## Features
 
-- 🤖 AI-Powered Resume Analysis
-- 📊 Resume Match Scoring
-- 📈 Skill & Profile Evaluation
-- 🔍 Detailed Resume Feedback
-- 🌙 Modern Responsive UI
-- ⚡ Fast & Interactive Experience
-- 🔐 Authentication System
-
-<!-- - 📄 Dynamic Report Generation -->
+- AI-Powered Resume Analysis
+- Resume Match Scoring
+- Skill & Profile Evaluation
+- Detailed Resume Feedback
+- Modern Responsive UI
+- Fast & Interactive Experience
+- Authentication System
+<!-- - Dynamic Report Generation -->
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 - React.js
@@ -36,13 +35,23 @@ Built with a modern full-stack architecture, the platform analyzes resumes, iden
 - Mongoose
 
 ### AI Integration
-- Google Gemini API 
+- Google Gemini API
+
+### Deployment
+- Docker
+- Render (containerized deployment)
 
 ---
 
 ## Live Demo
 
-**Click here 👉** https://interview-ai-app.onrender.com
+**Link:** https://interview-talentscan-ai.onrender.com
+
+---
+
+## Deployment
+
+The application is containerized using Docker and deployed on Render. The Docker image packages the backend server along with its dependencies, allowing for a consistent and reproducible deployment environment independent of the host system.
 
 ---
 
@@ -50,14 +59,13 @@ Built with a modern full-stack architecture, the platform analyzes resumes, iden
 
 **To run this project locally**
 
-Navigate to backend directory & install node dependencies
+Navigate to the backend directory and install dependencies:
 
 ```bash
 cd ./backend/ && npm install
 ```
----
 
-Run the project
+Run the project:
 
 ```bash
 npm run start
@@ -65,7 +73,7 @@ npm run start
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```bash
 TalentScan-AI/
@@ -90,35 +98,43 @@ TalentScan-AI/
 │   ├── app.ts              # Express app setup
 │   └── server.ts          # Server entry point
 │
+├── Dockerfile
 └── README.md
 ```
 
 ---
 
-## ⚙️ How It Works
+## How It Works
 
 1. Client sends:
    - Resume
    - Self Description
    - Job Description
-
 2. Server forwards the data to the Gemini AI Model.
-
 3. Gemini generates a structured interview report containing:
    - Technical Questions
    - Behavioral Questions
    - Skill Gaps
    - Personalized Preparation Plan
    - Match Analysis
-
 4. Generated report is stored in the database.
-
 5. Server sends the final report response back to the client.
-
 
 ---
 
-## 🎯 Future Improvements
+## What I Learned
+
+- How to use Docker to containerize the application for consistent, reproducible deployment
+- How to use the hooks layer to manage staged flows — e.g. handling the initial API call and then transitioning through loading states
+- How to use the Context API (React) as a global state layer across the frontend
+- How to use the Gemini API in a backend service file, including how it handles prompts
+- How to describe and validate prompt/response structures using Zod schemas
+- How to implement JWT authentication for securing routes
+- How to use error-handling middleware in Express for consistent, centralized error responses
+
+---
+
+## Future Improvements
 
 - AI Resume Suggestions
 - Resume Templates
@@ -128,6 +144,6 @@ TalentScan-AI/
 
 ---
 
-## ⭐ Support
+## Support
 
-If you like this project, consider giving it a ⭐ on GitHub!
+If you like this project, consider giving it a star on GitHub!
