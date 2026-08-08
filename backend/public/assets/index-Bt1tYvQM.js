@@ -323,4 +323,14 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
             sticky top-[73px]
             h-[calc(100vh-73px)]
             overflow-y-auto
-          `,children:l()})]})]})}(0,_.createRoot)(document.getElementById(`root`)).render((0,P.jsx)(kn,{children:(0,P.jsx)(Qn,{children:(0,P.jsx)(H,{children:(0,P.jsx)(()=>(0,P.jsx)(`main`,{className:`min-h-screen `,children:(0,P.jsxs)(Vt,{children:[(0,P.jsx)(zt,{path:`/`,element:(0,P.jsx)(ro,{})}),(0,P.jsx)(zt,{path:`/register`,element:(0,P.jsx)(io,{})}),(0,P.jsx)(zt,{path:`*`,element:(0,P.jsx)(mo,{})}),(0,P.jsxs)(zt,{element:(0,P.jsx)(ao,{}),children:[(0,P.jsx)(zt,{path:`/home`,element:(0,P.jsx)(po,{})}),(0,P.jsx)(zt,{path:`/report/:id`,element:(0,P.jsx)(ho,{})})]})]})}),{})})})}));
+          `,children:l()})]})]})}(0,_.createRoot)(document.getElementById(`root`)).render((0,P.jsx)(kn,{children:(0,P.jsx)(Qn,{children:(0,P.jsx)(H,{children:(0,P.jsx)(()=>(0,P.jsxs)(P.Fragment,{children:[(0,P.jsx)(`style`,{children:`
+        @media (min-width: 1024px) {
+          .desktop-zoom .h-screen {
+            height: calc(100vh / 0.85);
+          }
+
+          .desktop-zoom .min-h-screen {
+            min-height: calc(100vh / 0.85);
+          }
+        }
+      `}),(0,P.jsx)(`main`,{className:`desktop-zoom min-h-screen lg:[zoom:0.85]`,children:(0,P.jsxs)(Vt,{children:[(0,P.jsx)(zt,{path:`/`,element:(0,P.jsx)(ro,{})}),(0,P.jsx)(zt,{path:`/register`,element:(0,P.jsx)(io,{})}),(0,P.jsx)(zt,{path:`*`,element:(0,P.jsx)(mo,{})}),(0,P.jsxs)(zt,{element:(0,P.jsx)(ao,{}),children:[(0,P.jsx)(zt,{path:`/home`,element:(0,P.jsx)(po,{})}),(0,P.jsx)(zt,{path:`/report/:id`,element:(0,P.jsx)(ho,{})})]})]})})]}),{})})})}));

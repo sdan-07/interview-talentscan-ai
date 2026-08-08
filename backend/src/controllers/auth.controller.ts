@@ -80,7 +80,7 @@ export const logout = async (req: Request, res:Response): Promise<void> => {
   const token = req.cookies.userToken;
   await blacklistModel.create({ token });
 
-  res.clearCookie("userToken", cookieOptions);
+  res.clearCookie("userToken");
   res.status(200).json({status: "success", message: "Logged out"});
 }
 

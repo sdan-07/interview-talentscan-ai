@@ -9,8 +9,19 @@ import NotFound from "./components/NotFound";
 
 const App = () => {
   return (
-    <main className="min-h-screen ">
-      
+    <>
+      <style>{`
+        @media (min-width: 1024px) {
+          .desktop-zoom .h-screen {
+            height: calc(100vh / 0.85);
+          }
+
+          .desktop-zoom .min-h-screen {
+            min-height: calc(100vh / 0.85);
+          }
+        }
+      `}</style>
+      <main className="desktop-zoom min-h-screen lg:[zoom:0.85]">
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
@@ -22,8 +33,8 @@ const App = () => {
             <Route path="/report/:id" element={<ShowReport />} />
           </Route>
         </Routes>
-      
-    </main>
+      </main>
+    </>
   );
 };
 
