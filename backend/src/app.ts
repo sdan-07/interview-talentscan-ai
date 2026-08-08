@@ -23,7 +23,7 @@ app.use('/api/auth', authRouter);
 app.use('/api/ai', interviewRouter);
 
 // React Router fallback
-app.get("*", (_, res) => {
+app.get("/{*path}", (_, res) => {
   res.sendFile(path.resolve("public", "index.html"));
 });
 
