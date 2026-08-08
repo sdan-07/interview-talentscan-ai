@@ -4,6 +4,7 @@ import interviewRouter from './routes/interview.route.js';
 import errorMiddleware from './middlewares/error.middleware.js';
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import path from "path";
 
 const app:Application = express();
 
@@ -20,6 +21,11 @@ app.use(cookieParser());
 
 app.use('/api/auth', authRouter);
 app.use('/api/ai', interviewRouter);
+
+// React Router fallback
+app.get("*", (_, res) => {
+  res.sendFile(path.resolve("public", "index.html"));
+});
 
 app.use(errorMiddleware);
 
