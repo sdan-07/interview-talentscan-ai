@@ -124,17 +124,18 @@ TalentScan-AI/
 
 ## What I Learned
 
-- How to use Docker to containerize the application for consistent, reproducible deployment
-- How to use the hooks layer to manage staged flows — e.g. handling the initial API call and then transitioning through loading states
-- How to use the Context API (React) as a global state layer across the frontend
-- How to use the Gemini API in a backend service file, including how it handles prompts
-- How to describe and validate prompt/response structures using Zod schemas
-- How to implement JWT authentication for securing routes
-- How to use error-handling middleware in Express for consistent, centralized error responses
+- Containerizing and deploying a full-stack application using Docker and Render
+- Managing staged frontend flows using React hooks and Context API
+- Building REST APIs with Node.js and Express.js
+- Integrating the Gemini API through a backend service layer
+- Validating AI-generated responses using Zod schemas
+- Implementing JWT-based authentication and protected routes
+- Implementing centralized error handling middleware in Express.js
+- Designing and managing MongoDB schemas using Mongoose
 
 ---
 
-## Future Improvements
+<!--## Future Improvements
 
 - AI Resume Suggestions
 - Resume Templates
@@ -146,4 +147,4 @@ TalentScan-AI/
 
 ## Support
 
-If you like this project, consider giving it a star on GitHub!
+If you like this project, consider giving it a star on GitHub! -->
